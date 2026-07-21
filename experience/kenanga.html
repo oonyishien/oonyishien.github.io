@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kenanga Investment Bank Berhad | Market Representative | Yi Shien Oon</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: Inter, sans-serif;
+      background:#f8fafc;
+      color:#111827;
+    }
+
+    header{
+      position: sticky;
+      top: 0;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 16px 8%;
+      z-index: 10;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:#374151;
+      margin-left:18px;
+      font-size:15px;
+      transition: color .2s ease;
+    }
+
+    nav a:hover{ color:#1e40af; }
+
+    .hero{
+      padding:80px 8%;
+      background:
+        radial-gradient(circle at top right, rgba(59,130,246,0.38), transparent 38%),
+        radial-gradient(circle at bottom left, rgba(30,64,175,0.28), transparent 45%),
+        linear-gradient(135deg,#0f172a,#1e3a8a);
+      color:#ffffff;
+    }
+
+    .company{
+      display:inline-block;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:700;
+      letter-spacing:.02em;
+      margin-bottom:16px;
+    }
+
+    .hero h1{
+      font-size:48px;
+      margin:0 0 14px;
+    }
+
+    .hero p{
+      font-size:18px;
+      max-width:900px;
+      line-height:1.8;
+      margin:0 0 22px;
+      color:#cbd5e1;
+      text-align:left;
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin-top:22px;
+    }
+
+    .stat{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:14px;
+      padding:18px;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+      text-align:left;
+    }
+
+    .stat:hover{
+      transform: translateY(-4px);
+      background: rgba(255,255,255,.12);
+      border-color: rgba(199,210,254,.65);
+    }
+
+    .stat h2{
+      margin:0 0 6px;
+      font-size:26px;
+      color:#ffffff;
+      text-align:left;
+    }
+
+    .stat p{
+      margin:0;
+      color:rgba(255,255,255,.92);
+      font-size:15px;
+      line-height:1.5;
+      text-align:left;
+    }
+
+    section{
+      padding:50px 8%;
+      max-width:1200px;
+      margin:0 auto;
+    }
+
+    section h2{
+      margin:0 0 14px;
+      color:#0f172a;
+    }
+
+    section p{
+      line-height:1.85;
+      color:#374151;
+      margin:0 0 14px;
+      text-align: justify;
+    }
+
+    .grid{
+      display:grid;
+      gap:16px;
+      width:100%;
+    }
+
+    .grid-3{
+      grid-template-columns:repeat(3,1fr);
+    }
+
+    .card{
+      background:#ffffff;
+      border:1px solid #e5e7eb;
+      border-radius:14px;
+      padding:18px;
+      box-shadow:0 10px 24px rgba(0,0,0,.04);
+      text-align:left;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .card:hover{
+      transform: translateY(-5px);
+      box-shadow: 0 18px 35px rgba(0,0,0,.08);
+      border-color:#c7d2fe;
+    }
+
+    .card h3{
+      margin:4px 0 10px;
+      color:#0f172a;
+      font-size:18px;
+      text-align:left;
+    }
+
+    .card p{
+      margin:0;
+      color:#374151;
+      line-height:1.75;
+      text-align:left;
+    }
+
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .badges span{
+      background:#eef2ff;
+      border:1px solid #e0e7ff;
+      color:#1e40af;
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:14px;
+      transition: background .2s ease, transform .2s ease;
+      text-align:center;
+    }
+
+    .badges span:hover{
+      background:#dbeafe;
+      transform: translateY(-2px);
+    }
+
+    footer{
+      text-align:center;
+      padding:30px 8%;
+      color:#6b7280;
+    }
+
+    @media (max-width: 1000px){
+      .grid-3{ grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+      .hero-stats{ grid-template-columns: repeat(2,1fr); }
+      section{ max-width:1000px; }
+    }
+
+    @media (max-width: 600px){
+      nav{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:12px;
+      }
+      nav a{
+        margin-left:0;
+        margin-right:14px;
+        display:inline-block;
+        margin-bottom:8px;
+      }
+      .hero{ padding:60px 8%; }
+      .hero h1{ font-size:38px; }
+      .hero-stats{ grid-template-columns: 1fr; }
+      section{ padding:40px 8%; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div><strong>Yi Shien Oon</strong></div>
+      <div>
+        <a href="../index.html">Home</a>
+        <a href="../career.html">Career</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../education.html">Education</a>
+        <a href="../leadership.html">Leadership</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <span class="company">Kenanga Investment Bank Berhad</span>
+    <h1>Market Representative</h1>
+
+    <p>
+      FinZ, partnership with the Investment Partners Remiser Group — June 2022 to June 2023 (Johor Bahru, Johor, Malaysia).
+    </p>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <h2>1,000+</h2>
+        <p>Public Investors Engaged</p>
+      </div>
+      <div class="stat">
+        <h2>95</h2>
+        <p>Primary Client Relationship</p>
+      </div>
+      <div class="stat">
+        <h2>90%</h2>
+        <p>Client Retention</p>
+      </div>
+      <div class="stat">
+        <h2>25%</h2>
+        <p>Account Growth</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Role Summary</h2>
+    <p>
+      As a Market Representative, I worked closely with the Investment Partners Remiser Group to strengthen client outreach and market engagement.
+      I led a dedicated team called <strong>FinZ</strong>, delivering tailored financial solutions and in-depth market insights for public investors.
+    </p>
+    <p>
+      I served as a primary point of contact for <strong>95 clients</strong>, managing relationship quality, product delivery, and after-sales support.
+      This personalised client approach supported <strong>90% client retention</strong> and contributed to a <strong>25% increase in client accounts</strong> during my tenure.
+    </p>
+  </section>
+
+  <section>
+    <h2>Key Responsibilities</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Client Engagement & Coverage</h3>
+        <p>
+          Engaged <strong>1,000+</strong> public investors with practical market insights and promoted Kenanga’s trading services.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Stock & Portfolio Analysis</h3>
+        <p>
+          Conducted daily analysis of three key stocks, reviewed historical performance and financial statements, and aligned client portfolios with target prices.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Seminars & Communication</h3>
+        <p>
+          Delivered speeches at financial seminars, representing both Kenanga and the Investment Partners Remiser Group to educate investors on trading strategies and market trends.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Teamwork & Knowledge Sharing (FinZ)</h2>
+    <p>
+      As part of FinZ, I collaborated with my team to share insights and build collective market knowledge, helping us anticipate market movements and identify new opportunities.
+    </p>
+  </section>
+
+  <section>
+    <h2>Platforms &amp; Knowledge Areas</h2>
+    <div class="badges">
+      <span>Market Analysis</span>
+      <span>Portfolio Alignment</span>
+      <span>Client Relationship Management</span>
+      <span>Public Speaking</span>
+      <span>Stock Performance Analytics</span>
+      <span>Financial Statement Review</span>
+    </div>
+  </section>
+
+  <footer>© Yi Shien Oon</footer>
+</body>
+</html>
