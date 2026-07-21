@@ -4,39 +4,56 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>S&P Global | Limited Partner Specialist | Yi Shien Oon</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+    * { box-sizing: border-box; }
+
     body{
       margin:0;
-      font-family:Inter,sans-serif;
+      font-family: Inter, sans-serif;
       background:#f8fafc;
       color:#111827;
     }
+
     header{
-      position:sticky;
-      top:0;
-      background:#fff;
-      border-bottom:1px solid #e5e7eb;
-      padding:16px 8%;
-      z-index:10;
+      position: sticky;
+      top: 0;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 16px 8%;
+      z-index: 10;
     }
+
     nav{
       display:flex;
       justify-content:space-between;
       align-items:center;
     }
+
     nav a{
       text-decoration:none;
       color:#374151;
       margin-left:18px;
+      font-size:15px;
+      transition: color .2s ease;
+    }
+
+    nav a:hover{
+      color:#1e40af;
     }
 
     .hero{
       padding:80px 8%;
-      background:linear-gradient(135deg,#0f172a,#1e3a8a);
-      color:#fff;
+      /* Keep blue gradient; add subtle glow (no logo background) */
+      background:
+        radial-gradient(circle at top right, rgba(59,130,246,0.38), transparent 38%),
+        radial-gradient(circle at bottom left, rgba(30,64,175,0.28), transparent 45%),
+        linear-gradient(135deg,#0f172a,#1e3a8a);
+      color:#ffffff;
     }
+
     .company{
       display:inline-block;
       background:rgba(255,255,255,.12);
@@ -47,7 +64,12 @@
       letter-spacing:.02em;
       margin-bottom:16px;
     }
-    .hero h1{ font-size:48px; margin:0 0 14px; }
+
+    .hero h1{
+      font-size:48px;
+      margin:0 0 14px;
+    }
+
     .hero p{
       font-size:18px;
       max-width:860px;
@@ -58,24 +80,47 @@
 
     .hero-stats{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      grid-template-columns:repeat(4,1fr);
       gap:14px;
       margin-top:22px;
     }
+
     .stat{
       background:rgba(255,255,255,.08);
       border:1px solid rgba(255,255,255,.14);
       border-radius:14px;
       padding:18px;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
     }
-    .stat h2{ margin:0 0 6px; font-size:26px; }
-    .stat p{ margin:0; color:rgba(255,255,255,.86); }
+
+    .stat:hover{
+      transform: translateY(-4px);
+      background: rgba(255,255,255,.12);
+      border-color: rgba(199,210,254,.65);
+    }
+
+    .stat h2{
+  margin:0 0 6px;
+  font-size:26px;
+  color:#ffffff; /* make the number visible */
+}
+
+.stat p{
+  margin:0;
+  color:rgba(255,255,255,.9); /* lighter paragraph text */
+  font-size:15px;
+  line-height:1.5;
+}
 
     section{
       padding:50px 8%;
-      max-width:1000px;
+      max-width:1200px;
     }
-    section h2{ margin:0 0 14px; }
+
+    section h2{
+      margin:0 0 14px;
+      color:#0f172a;
+    }
 
     section p{
       line-height:1.85;
@@ -85,21 +130,44 @@
 
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
       gap:16px;
     }
+
+    .grid-5{
+      grid-template-columns:repeat(5,1fr);
+    }
+
+    .grid-3{
+      grid-template-columns:repeat(3,1fr);
+    }
+
     .card{
-      background:#fff;
+      background:#ffffff;
       border:1px solid #e5e7eb;
       border-radius:14px;
       padding:18px;
       box-shadow:0 10px 24px rgba(0,0,0,.04);
+      text-align:left;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
     }
-    .card h3{ margin:4px 0 10px; color:#0f172a; }
-    ul{
-      line-height:1.85;
+
+    .card h3{
+      margin:4px 0 10px;
+      color:#0f172a;
+      font-size:18px;
+    }
+
+    .card p{
+      margin:0;
       color:#374151;
-      padding-left:18px;
+      line-height:1.75;
+      text-align:left;
+    }
+
+    .card:hover{
+      transform: translateY(-5px);
+      box-shadow: 0 18px 35px rgba(0,0,0,.08);
+      border-color:#c7d2fe;
     }
 
     .badges{
@@ -107,6 +175,7 @@
       flex-wrap:wrap;
       gap:10px;
     }
+
     .badges span{
       background:#eef2ff;
       border:1px solid #e0e7ff;
@@ -115,6 +184,12 @@
       border-radius:999px;
       font-weight:600;
       font-size:14px;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .badges span:hover{
+      background:#dbeafe;
+      transform: translateY(-2px);
     }
 
     footer{
@@ -123,11 +198,39 @@
       color:#6b7280;
     }
 
-    .topbar{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
+    @media (max-width: 1000px){
+      .grid-5{
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      }
+      .grid-3{
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+      .hero-stats{
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px){
+      nav{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:12px;
+      }
+      nav a{
+        margin-left:0;
+        margin-right:14px;
+        display:inline-block;
+        margin-bottom:8px;
+      }
+      .hero{
+        padding:60px 8%;
+      }
+      .hero h1{
+        font-size:38px;
+      }
+      .hero-stats{
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -172,31 +275,29 @@
         <h2>100%</h2>
         <p>Green Client Rating</p>
       </div>
-      <div class="stat">
-        <h2>Launched</h2>
-        <p>S&amp;P Global Private Equity Index</p>
-      </div>
     </div>
   </section>
 
   <section>
     <h2>Overview</h2>
     <p>
-      As a Limited Partner Specialist at S&amp;P Global, I supported institutional investors across Asia-Pacific by managing complex private market investment data and reporting processes. My clients included retirement funds, asset management companies, insurance companies, trust banks, and development banks located across Hong Kong, Singapore, Australia, Japan, Korea, and the Philippines.
+      As a Limited Partner Specialist at S&amp;P Global, I supported institutional investors across Asia-Pacific by managing complex private market investment data and reporting processes.
+      My clients included retirement funds, asset management companies, insurance companies, trust banks, and development banks located across Hong Kong, Singapore, Australia, Japan, Korea, and the Philippines.
     </p>
     <p>
-      I was entrusted with managing the firm's largest institutional client portfolio, representing more than <strong>US$550 billion in Assets Under Management</strong> across more than <strong>1,000 private market funds</strong>. My work focused on ensuring investment data accuracy, improving operational efficiency, and maintaining long-term client satisfaction through proactive stakeholder engagement.
+      I was entrusted with managing the firm's largest institutional client portfolio, representing more than <strong>US$550 billion in Assets Under Management</strong> across more than <strong>1,000 private market funds</strong>.
+      My work focused on ensuring investment data accuracy, improving operational efficiency, and maintaining long-term client satisfaction through proactive stakeholder engagement.
     </p>
   </section>
 
   <section>
     <h2>Institutional Investors Supported</h2>
-    <div class="grid">
+    <div class="grid grid-5">
       <div class="card">
         <h3>🏦 Retirement Funds</h3>
       </div>
       <div class="card">
-        <h3>📈 Asset Management Companies</h3>
+        <h3>📈 Asset Management</h3>
       </div>
       <div class="card">
         <h3>🛡️ Insurance Companies</h3>
@@ -213,7 +314,7 @@
   <section>
     <h2>Regional Coverage</h2>
     <p>Worked closely with institutional investors across the Asia-Pacific region.</p>
-    <div class="grid">
+    <div class="grid grid-3">
       <div class="card">🇭🇰 Hong Kong</div>
       <div class="card">🇸🇬 Singapore</div>
       <div class="card">🇦🇺 Australia</div>
@@ -226,9 +327,9 @@
   <section>
     <h2>Investment Data Lifecycle</h2>
 
-    <div class="grid">
+    <div class="grid grid-3">
       <div class="card">
-        <h3>Fund Onboarding (with GP Consent)</h3>
+        <h3>Fund Onboarding</h3>
         <p>
           Managed onboarding of private market funds, including GP consent, while ensuring data completeness and reporting accuracy.
         </p>
@@ -237,42 +338,56 @@
       <div class="card">
         <h3>Fund Level Data Management</h3>
         <p>
-          Managed fund-level data, including Schedule of Investment verification and fund-level reporting review.
+          Managed fund-level data, including Schedule of Investment verification and end-to-end reporting readiness checks.
         </p>
       </div>
 
       <div class="card">
-        <h3>Cash Transactions (Aligned to GP Reporting)</h3>
+        <h3>Cash Transactions</h3>
         <p>
-          Maintained capital call and distribution data, reconciling total capital calls and distributions to GP reporting and tracking inside and outside commitment alignment.
+          Maintained capital call and distribution data, reconciling total capital calls and distributions to GP reporting and inside/outside commitment alignment.
         </p>
       </div>
 
       <div class="card">
-        <h3>NAV Reconciliation (Adjusted for Non-NAV Impacts)</h3>
+        <h3>NAV Reconciliation</h3>
         <p>
           Validated NAV reporting by excluding post-cash transactions and adjusting for transactions that did not impact NAV.
         </p>
       </div>
 
       <div class="card">
-        <h3>Performance Monitoring (QoQ IRR Movement)</h3>
+        <h3>Performance Monitoring</h3>
         <p>
-          Tracked IRR and quarter-on-quarter IRR movement, alongside remaining capital commitment and portfolio exposure monitoring.
+          Tracked IRR alongside quarter-level performance monitoring, remaining capital commitment, and portfolio exposure.
         </p>
       </div>
 
       <div class="card">
-        <h3>Portfolio Company Data (DataBridge Template)</h3>
+        <h3>Portfolio Company Data</h3>
         <p>
           Maintained operational and investment metrics for underlying portfolio companies through the DataBridge template.
         </p>
       </div>
 
       <div class="card">
-        <h3>Stakeholder Engagement (Resolve Data Variance)</h3>
+        <h3>Stakeholder Engagement</h3>
         <p>
           Worked directly with institutional clients to resolve data variance, reporting issues, and investment data discrepancies.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Client Onboarding &amp; Offboarding</h3>
+        <p>
+          Supported end-to-end client onboarding and offboarding processes, ensuring smooth transitions and continuity of service.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Private Equity Index</h3>
+        <p>
+          Supported the launch of S&amp;P Global's Private Equity Index by contributing to fund-level and portfolio company data migration and integration.
         </p>
       </div>
     </div>
@@ -293,13 +408,18 @@
       <span>Stakeholder Management</span>
       <span>Investment Reporting</span>
       <span>Client Success</span>
+      <span>iLevel</span>
+      <span>CapIQ Pro</span>
+      <span>PMC Doc Manager</span>
+      <span>Microsoft Excel</span>
     </div>
   </section>
 
   <section>
     <h2>Key Takeaways</h2>
     <p>
-      My experience at S&amp;P Global strengthened my understanding of institutional investing and the operational infrastructure supporting private markets. Beyond technical expertise in investment data management, the role reinforced the importance of accuracy, stakeholder communication, and continuous process improvement when supporting some of the world's largest institutional investors.
+      My experience at S&amp;P Global strengthened my understanding of institutional investing and the operational infrastructure supporting private markets.
+      Beyond technical expertise in investment data management, the role reinforced the importance of accuracy, stakeholder communication, and continuous process improvement when supporting some of the world's largest institutional investors.
     </p>
   </section>
 
