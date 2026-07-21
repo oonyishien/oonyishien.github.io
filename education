@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Education | Yi Shien Oon</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family:Inter, sans-serif;
+      background:#f8fafc;
+      color:#111827;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      background:#ffffff;
+      border-bottom:1px solid #e5e7eb;
+      padding:16px 8%;
+      z-index:10;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:#374151;
+      margin-left:18px;
+      font-size:15px;
+      transition: color .2s ease;
+    }
+
+    nav a:hover{ color:#1e40af; }
+
+    .hero{
+      padding:88px 8%;
+      background:
+        radial-gradient(circle at top right, rgba(59,130,246,0.38), transparent 38%),
+        radial-gradient(circle at bottom left, rgba(30,64,175,0.28), transparent 45%),
+        linear-gradient(135deg,#0f172a,#1e3a8a);
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 30%),
+        radial-gradient(circle at 80% 10%, rgba(255,255,255,0.06), transparent 28%);
+      pointer-events:none;
+    }
+
+    .hero-inner{
+      position:relative;
+      max-width:1100px;
+    }
+
+    .hero .tag{
+      display:inline-block;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:800;
+      letter-spacing:.02em;
+      margin-bottom:18px;
+    }
+
+    .hero h1{
+      margin:0 0 14px;
+      font-size:56px;
+      line-height:1.05;
+    }
+
+    .hero p{
+      margin:0;
+      font-size:18px;
+      line-height:1.8;
+      color:#cbd5e1;
+      max-width:860px;
+    }
+
+    .wrap{
+      padding:52px 8%;
+      max-width:1200px;
+      margin:0 auto;
+    }
+
+    .section-title{
+      color:#0f172a;
+      margin:0 0 14px;
+      font-size:28px;
+      letter-spacing:-0.01em;
+    }
+
+    .lead{
+      color:#374151;
+      margin:0 0 26px;
+      line-height:1.85;
+      text-align:justify;
+      font-size:16px;
+    }
+
+    .edu-grid{
+      display:grid;
+      gap:18px;
+      grid-template-columns:repeat(12, 1fr);
+    }
+
+    .edu-card{
+      grid-column: span 12;
+      background:#fff;
+      border:1px solid #e5e7eb;
+      border-radius:16px;
+      padding:18px;
+      box-shadow:0 10px 24px rgba(0,0,0,.04);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .edu-card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 18px 35px rgba(0,0,0,.08);
+      border-color:#c7d2fe;
+    }
+
+    .edu-head{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+
+    .edu-degree{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      min-width:260px;
+    }
+
+    .edu-degree h3{
+      margin:0;
+      color:#0f172a;
+      font-size:20px;
+      line-height:1.2;
+    }
+
+    .edu-meta{
+      color:#6b7280;
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .badge-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:flex-end;
+      align-items:flex-start;
+      max-width:520px;
+    }
+
+    .badge{
+      background:#eef2ff;
+      border:1px solid #e0e7ff;
+      color:#1e40af;
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:13px;
+      text-align:center;
+      white-space:nowrap;
+    }
+
+    .edu-body{
+      display:grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .edu-text{
+      color:#374151;
+      line-height:1.85;
+      text-align:justify;
+      font-size:15px;
+    }
+
+    .edu-text ul{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:#374151;
+      line-height:1.95;
+    }
+
+    .edu-text li{ margin:6px 0; }
+
+    .edu-side{
+      background:#f8fafc;
+      border:1px solid #eef2ff;
+      border-radius:14px;
+      padding:14px;
+    }
+
+    .edu-side h4{
+      margin:0 0 10px;
+      color:#0f172a;
+      font-size:14px;
+      letter-spacing:.02em;
+      text-transform:uppercase;
+    }
+
+    .metric{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      margin-bottom:10px;
+    }
+
+    .metric:last-child{ margin-bottom:0; }
+
+    .metric .big{
+      color:#0f172a;
+      font-size:22px;
+      font-weight:900;
+      letter-spacing:-0.02em;
+    }
+
+    .metric .small{
+      color:#6b7280;
+      font-size:13px;
+      line-height:1.4;
+    }
+
+    .divider{
+      height:1px;
+      background:#e5e7eb;
+      margin:22px 0;
+    }
+
+    @media (max-width: 900px){
+      .edu-body{
+        grid-template-columns: 1fr;
+      }
+      .badge-row{
+        justify-content:flex-start;
+      }
+      .hero h1{ font-size:44px; }
+    }
+
+    @media (max-width: 600px){
+      nav{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      nav a{
+        margin-left:0;
+        margin-right:14px;
+        margin-bottom:8px;
+      }
+      .hero{
+        padding:62px 8%;
+      }
+      .hero h1{ font-size:38px; }
+      .wrap{ padding:44px 8%; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div><strong>Yi Shien Oon</strong></div>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="career.html">Career</a>
+        <a href="projects.html">Projects</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="education.html">Education</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="tag">Quantitative Finance • Research • Distinctions</div>
+      <h1>Education</h1>
+      <p>
+        A professional-grade academic profile combining finance fundamentals, empirical research, and programming-driven quantitative analysis—built to
+        support decision-making in markets and investment operations.
+      </p>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <h2 class="section-title">Academic Programs & Key Achievements</h2>
+    <p class="lead">
+      Each program below highlights both your formal qualifications and the standout outcomes you earned—distinctions, competitive performance, and
+      research outputs—presented in a recruiter-friendly format.
+    </p>
+
+    <div class="edu-grid">
+
+      <!-- Master -->
+      <article class="edu-card">
+        <div class="edu-head">
+          <div class="edu-degree">
+            <h3>Master in Finance — Warwick Business School</h3>
+            <div class="edu-meta">September 2023 – September 2024 | Warwick, United Kingdom</div>
+          </div>
+          <div class="badge-row">
+            <div class="badge">Empirical Finance</div>
+            <div class="badge">MATLAB • Python</div>
+            <div class="badge">Distinction (Key Modules)</div>
+          </div>
+        </div>
+
+        <div class="edu-body">
+          <div class="edu-text">
+            Pursued a comprehensive Master’s curriculum in finance, deepening expertise in financial markets, investment strategies, and empirical finance.
+            Applied MATLAB and Python throughout financial modelling, data analysis, and quantitative research workflows—supporting large datasets,
+            automated calculations, and predictive modelling.
+            <ul>
+              <li>Achieved <strong>Top 5 ranking</strong> in the competitive AmplifyME Simulation Programme as a sell-side trader, including negotiating optimal spreads under real-time constraints.</li>
+              <li>Earned distinctions across key modules including <strong>Investment Management</strong>, <strong>Alternative Management</strong>, <strong>Banking and Financial Institutions</strong>, and <strong>Empirical Finance</strong>.</li>
+              <li>Delivered an investment thesis presentation to an international audience to strengthen pitching and public speaking capability.</li>
+              <li>Dissertation: <strong>“Predicting U.S. Equity and Corporate Bond Returns: An Empirical Analysis”</strong> using advanced econometric methods and MATLAB/Python.</li>
+            </ul>
+          </div>
+
+          <aside class="edu-side">
+            <h4>Standout Outcomes</h4>
+            <div class="metric">
+              <div class="big">Top 5</div>
+              <div class="small">AmplifyME simulation ranking (sell-side trader)</div>
+            </div>
+            <div class="metric">
+              <div class="big">Distinctions</div>
+              <div class="small">Multiple module distinctions (Investment / Alternative / Empirical)</div>
+            </div>
+            <div class="metric">
+              <div class="big">Dissertation</div>
+              <div class="small">Equity + credit returns prediction (empirical econometrics)</div>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- Coventry -->
+      <article class="edu-card">
+        <div class="edu-head">
+          <div class="edu-degree">
+            <h3>Bachelor in Financial Analysis — Coventry University</h3>
+            <div class="edu-meta">January 2023 – April 2023 | Coventry, United Kingdom</div>
+          </div>
+          <div class="badge-row">
+            <div class="badge">Exchange Program</div>
+            <div class="badge">Empirical Study</div>
+            <div class="badge">Distinction</div>
+          </div>
+        </div>
+
+        <div class="edu-body">
+          <div class="edu-text">
+            Completed a 4-month exchange program at Coventry University to deepen academic exposure to financial analysis methods and strengthen
+            cross-cultural learning in a new academic environment.
+            <ul>
+              <li>Dissertation (Distinction): <strong>“A Comparison Performance of Conventional Unit Trusts and Islamic Unit Trusts in Malaysia (2013–2022)”</strong>, evaluating performance differences using quantitative measures.</li>
+              <li>Strengthened practical research capability in portfolio performance evaluation and investment strategy assessment.</li>
+              <li>Developed leadership and adaptability through supporting incoming juniors via a student exchange sharing session.</li>
+            </ul>
+          </div>
+
+          <aside class="edu-side">
+            <h4>Standout Outcomes</h4>
+            <div class="metric">
+              <div class="big">Distinction</div>
+              <div class="small">Exchange dissertation outcome</div>
+            </div>
+            <div class="metric">
+              <div class="big">9-Year Data</div>
+              <div class="small">2013–2022 unit trust performance comparison</div>
+            </div>
+            <div class="metric">
+              <div class="big">Leadership</div>
+              <div class="small">Exchange Sharing Session (senior student support)</div>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- TAR UMT -->
+      <article class="edu-card">
+        <div class="edu-head">
+          <div class="edu-degree">
+            <h3>Bachelor in Finance and Investment (Honours) — Tunku Abdul Rahman University of Management and Technology (TAR UMT)</h3>
+            <div class="edu-meta">June 2021 – June 2023 | Kuala Lumpur, Malaysia</div>
+          </div>
+          <div class="badge-row">
+            <div class="badge">Full Scholarship</div>
+            <div class="badge">Dean’s List / President’s List</div>
+            <div class="badge">Distinction</div>
+          </div>
+        </div>
+
+        <div class="edu-body">
+          <div class="edu-text">
+            Awarded a full scholarship based on distinction in diploma studies and maintained consistent academic excellence across the program.
+            Graduation achieved with distinction, supported by multiple placements on Dean’s List and President’s List.
+            <ul>
+              <li>Vice President — <strong>Bursa Young Investor Club</strong>: organised workshops and trading simulations to improve student market understanding.</li>
+              <li>President — <strong>Malaysia Investment Symposium</strong>: led a national event connecting industry professionals, students, and academics.</li>
+              <li>Student Advisor — <strong>Malaysia Youth Trading Competition</strong>: provided mentorship and guidance to competitors.</li>
+              <li>Placed <strong>2nd Runner-Up</strong> at the Malaysian Finance Expert Convention (case study analysis and strategy development).</li>
+              <li>Represented TAR UMT in the <strong>MFPC National Financial Planning e-Tournament</strong>.</li>
+            </ul>
+          </div>
+
+          <aside class="edu-side">
+            <h4>Standout Outcomes</h4>
+            <div class="metric">
+              <div class="big">Full Scholar</div>
+              <div class="small">Scholarship on distinction in prior diploma</div>
+            </div>
+            <div class="metric">
+              <div class="big">Dean’s/Pres.</div>
+              <div class="small">3 Dean’s List placements, 1 President’s List</div>
+            </div>
+            <div class="metric">
+              <div class="big">2nd Runner-Up</div>
+              <div class="small">National-level finance case competition</div>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- TARUC Diploma -->
+      <article class="edu-card">
+        <div class="edu-head">
+          <div class="edu-degree">
+            <h3>Diploma in Finance and Investment — Tunku Abdul Rahman University College (TARUC)</h3>
+            <div class="edu-meta">June 2019 – May 2021 | Pulau Pinang, Malaysia</div>
+          </div>
+          <div class="badge-row">
+            <div class="badge">9 A’s in SPM</div>
+            <div class="badge">Distinction</div>
+            <div class="badge">CFP • Insurance License</div>
+          </div>
+        </div>
+
+        <div class="edu-body">
+          <div class="edu-text">
+            Earned a full scholarship after achieving 9 A’s in SPM and consistently performed at a high academic level, graduating with distinction.
+            Built a strong foundation in financial principles, investment analysis, and business economics.
+            <ul>
+              <li>President — <strong>Bursa Young Investor Club</strong>: promoted financial literacy through workshops, investment competitions, and educational seminars.</li>
+              <li>President — <strong>Rookie Investor Accelerator: From Noob to Swag</strong>: guided students from foundational to advanced investment strategies.</li>
+              <li>Vice President — <strong>Photography Club</strong>: coordinated events including Prom Night responsibilities.</li>
+              <li>Served as Photographer and MC for <strong>Voice of Rahman</strong> talent show.</li>
+              <li>Guest Speaker for TARUC Investment Trading Competition on <strong>Fundamental & Technical Analysis</strong>.</li>
+              <li>Achieved <strong>1st Runner-Up</strong> in Volleyball (Sports Day).</li>
+              <li>Passed the <strong>Certified Financial Planner (CFP)</strong> exam and obtained an <strong>insurance agent license</strong> on first attempt.</li>
+            </ul>
+          </div>
+
+          <aside class="edu-side">
+            <h4>Standout Outcomes</h4>
+            <div class="metric">
+              <div class="big">9 A’s</div>
+              <div class="small">SPM academic achievement leading to full scholarship</div>
+            </div>
+            <div class="metric">
+              <div class="big">Distinction</div>
+              <div class="small">Diploma graduation outcome</div>
+            </div>
+            <div class="metric">
+              <div class="big">CFP + License</div>
+              <div class="small">First-attempt qualification</div>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer style="padding:30px 8%; text-align:center; color:#6b7280;">
+    © Yi Shien Oon
+  </footer>
+</body>
+</html>
