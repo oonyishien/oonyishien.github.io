@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Doo Financial | Operations Executive | Yi Shien Oon</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: Inter, sans-serif;
+      background:#f8fafc;
+      color:#111827;
+    }
+
+    header{
+      position: sticky;
+      top: 0;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 16px 8%;
+      z-index: 10;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:#374151;
+      margin-left:18px;
+      font-size:15px;
+      transition: color .2s ease;
+    }
+
+    nav a:hover{
+      color:#1e40af;
+    }
+
+    .hero{
+      padding:80px 8%;
+      background:
+        radial-gradient(circle at top right, rgba(59,130,246,0.38), transparent 38%),
+        radial-gradient(circle at bottom left, rgba(30,64,175,0.28), transparent 45%),
+        linear-gradient(135deg,#0f172a,#1e3a8a);
+      color:#ffffff;
+    }
+
+    .company{
+      display:inline-block;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:700;
+      letter-spacing:.02em;
+      margin-bottom:16px;
+    }
+
+    .hero h1{
+      font-size:48px;
+      margin:0 0 14px;
+    }
+
+    .hero p{
+      font-size:18px;
+      max-width:900px;
+      line-height:1.8;
+      margin:0 0 22px;
+      color:#cbd5e1;
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin-top:22px;
+    }
+
+    .stat{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:14px;
+      padding:18px;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .stat:hover{
+      transform: translateY(-4px);
+      background: rgba(255,255,255,.12);
+      border-color: rgba(199,210,254,.65);
+    }
+
+    .stat h2{
+      margin:0 0 6px;
+      font-size:26px;
+      color:#ffffff;
+    }
+
+    .stat p{
+      margin:0;
+      color:rgba(255,255,255,.9);
+      font-size:15px;
+      line-height:1.5;
+      text-align:left;
+    }
+
+    section{
+      padding:50px 8%;
+      max-width:1200px;
+      margin:0 auto;
+    }
+
+    section h2{
+      margin:0 0 14px;
+      color:#0f172a;
+    }
+
+    section p{
+      line-height:1.85;
+      color:#374151;
+      margin:0 0 14px;
+      text-align:justify;
+    }
+
+    .grid{
+      display:grid;
+      gap:16px;
+      width:100%;
+    }
+
+    .grid-3{
+      grid-template-columns:repeat(3,1fr);
+      width:100%;
+    }
+
+    .grid-6{
+      grid-template-columns:repeat(6,1fr);
+      width:100%;
+    }
+
+    .card{
+      background:#ffffff;
+      border:1px solid #e5e7eb;
+      border-radius:14px;
+      padding:18px;
+      box-shadow:0 10px 24px rgba(0,0,0,.04);
+      text-align:left;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .card:hover{
+      transform: translateY(-5px);
+      box-shadow: 0 18px 35px rgba(0,0,0,.08);
+      border-color:#c7d2fe;
+    }
+
+    .card h3{
+      margin:4px 0 10px;
+      color:#0f172a;
+      font-size:18px;
+    }
+
+    .card p{
+      margin:0;
+      color:#374151;
+      line-height:1.75;
+      text-align:left;
+    }
+
+    .department-card{
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      min-height:120px;
+    }
+
+    .department-card h3{
+      font-size:16px;
+      margin:8px 0 0;
+      text-align:center;
+    }
+
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .badges span{
+      background:#eef2ff;
+      border:1px solid #e0e7ff;
+      color:#1e40af;
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:14px;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .badges span:hover{
+      background:#dbeafe;
+      transform: translateY(-2px);
+    }
+
+    footer{
+      text-align:center;
+      padding:30px 8%;
+      color:#6b7280;
+    }
+
+    @media (max-width: 1000px){
+      .grid-3{
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .grid-6{
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      }
+
+      .hero-stats{
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      section{
+        max-width:1000px;
+      }
+    }
+
+    @media (max-width: 600px){
+      nav{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:12px;
+      }
+
+      nav a{
+        margin-left:0;
+        margin-right:14px;
+        display:inline-block;
+        margin-bottom:8px;
+      }
+
+      .hero{
+        padding:60px 8%;
+      }
+
+      .hero h1{
+        font-size:38px;
+      }
+
+      .hero-stats{
+        grid-template-columns:1fr;
+      }
+
+      section{
+        padding:40px 8%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <div><strong>Yi Shien Oon</strong></div>
+      <div>
+        <a href="../index.html">Home</a>
+        <a href="../career.html">Career</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../education.html">Education</a>
+        <a href="../leadership.html">Leadership</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <span class="company">Doo Financial, Doo Group</span>
+
+    <h1>Operations Executive</h1>
+
+    <p>
+      Participated in Doo Group's Management Trainee Program, rotating across key operational departments to build a holistic understanding of financial operations, trading systems, client onboarding, settlement processes, support functions, and risk management.
+    </p>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <h2>6</h2>
+        <p>Department Rotations</p>
+      </div>
+
+      <div class="stat">
+        <h2>Global</h2>
+        <p>Client Onboarding Exposure</p>
+      </div>
+
+      <div class="stat">
+        <h2>UAT/PRD</h2>
+        <p>Trading System Testing</p>
+      </div>
+
+      <div class="stat">
+        <h2>Multi-Currency</h2>
+        <p>Financial Operations</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Overview</h2>
+
+    <p>
+      As an Operations Executive under the Management Trainee Program at Doo Group, I rotated across six critical departments: Client Management, Trading &amp; Dealing, Financial Operations, Settlement, Support, and Risk Management. This cross-departmental exposure equipped me with a broad understanding of the company’s operating model before specialising further within the Operations Department.
+    </p>
+
+    <p>
+      The role provided hands-on exposure to client onboarding, trading system configuration, operational testing, fund movement processes, internal reconciliations, exchange rate updates, and multi-regional operational workflows. Through this experience, I developed a stronger understanding of how front-end client requirements, trading infrastructure, and back-office operations connect within a financial services environment.
+    </p>
+  </section>
+
+  <section>
+    <h2>Department Rotation Exposure</h2>
+
+    <div class="grid grid-6">
+      <div class="card department-card">
+        <div>👥</div>
+        <h3>Client Management</h3>
+      </div>
+
+      <div class="card department-card">
+        <div>📈</div>
+        <h3>Trading &amp; Dealing</h3>
+      </div>
+
+      <div class="card department-card">
+        <div>💰</div>
+        <h3>Financial Operations</h3>
+      </div>
+
+      <div class="card department-card">
+        <div>🔄</div>
+        <h3>Settlement</h3>
+      </div>
+
+      <div class="card department-card">
+        <div>🛠️</div>
+        <h3>Support</h3>
+      </div>
+
+      <div class="card department-card">
+        <div>🛡️</div>
+        <h3>Risk Management</h3>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Core Responsibilities</h2>
+
+    <div class="grid grid-3">
+
+      <div class="card">
+        <h3>Client Management</h3>
+        <p>
+          Responsible for onboarding individual, corporate, and institutional clients globally, ensuring smooth account setup processes while adhering to regulatory and compliance standards across different regions.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Full Client Onboarding Cycle</h3>
+        <p>
+          Managed the full client onboarding cycle, from account opening to implementing rebate structures tailored to diverse client requirements, supporting stronger client satisfaction and operational efficiency.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Trading System Configuration</h3>
+        <p>
+          Participated in the configuration and maintenance of trading systems, including Product Center and Upper Broker platforms, helping ensure system integrity across multiple regions.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>System Testing &amp; Integration</h3>
+        <p>
+          Provided operational support for testing and integrating new features into trading systems, ensuring alignment with both client and broker requirements.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>UAT &amp; PRD Testing</h3>
+        <p>
+          Contributed to user acceptance testing and production system testing to ensure smooth functionality, identify potential issues, and support full-scale implementation readiness.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Fund-In &amp; Fund-Out Operations</h3>
+        <p>
+          Oversaw fund-in and fund-out processes, ensuring accurate and timely internal transfers, reconciliations, and fund management for both retail and institutional clients.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Exchange Rate Management</h3>
+        <p>
+          Managed and updated exchange rates for clients, supporting accurate and compliant financial transactions within a multi-currency operating environment.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Operational Coordination</h3>
+        <p>
+          Worked across multiple operational functions to understand how client-facing service, trading infrastructure, and back-office financial processes interact within the wider business.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Cross-Department Learning</h3>
+        <p>
+          Built practical exposure across Client Management, Trading &amp; Dealing, Financial Operations, Settlement, Support, and Risk Management to develop a rounded understanding of financial operations.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Platforms &amp; Knowledge Areas</h2>
+
+    <div class="badges">
+      <span>Client Onboarding</span>
+      <span>Operations Management</span>
+      <span>Trading Systems</span>
+      <span>Product Center</span>
+      <span>Upper Broker</span>
+      <span>UAT Testing</span>
+      <span>PRD Testing</span>
+      <span>Financial Operations</span>
+      <span>Fund-In / Fund-Out</span>
+      <span>Internal Transfers</span>
+      <span>Reconciliation</span>
+      <span>Exchange Rate Management</span>
+      <span>Multi-Currency Transactions</span>
+      <span>Settlement</span>
+      <span>Risk Management</span>
+      <span>Client Support</span>
+      <span>Compliance Awareness</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Key Takeaways</h2>
+
+    <p>
+      My time at Doo Group strengthened my understanding of financial operations from both a client-facing and operational infrastructure perspective. The rotation across six departments helped me understand how onboarding, trading systems, financial operations, settlement, support, and risk management work together to deliver reliable services to global clients.
+    </p>
+
+    <p>
+      This experience also enhanced my ability to work across teams, understand system requirements, support operational testing, and manage financial processes in a fast-moving multi-currency environment. It provided a strong foundation for my later work in institutional investment data management and private market operations.
+    </p>
+  </section>
+
+  <footer>
+    © Yi Shien Oon
+  </footer>
+
+</body>
+</html>
