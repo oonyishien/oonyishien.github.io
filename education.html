@@ -20,7 +20,7 @@
     header{
       position:sticky;
       top:0;
-      background:#ffffff;
+      background:#fff;
       border-bottom:1px solid #e5e7eb;
       padding:16px 8%;
       z-index:10;
@@ -38,9 +38,8 @@
       color:#374151;
       margin-left:18px;
       font-size:15px;
-      transition: color .2s ease;
+      transition:color .2s ease;
     }
-
     nav a:hover{ color:#1e40af; }
 
     .hero{
@@ -118,11 +117,10 @@
     .edu-grid{
       display:grid;
       gap:18px;
-      grid-template-columns:repeat(12, 1fr);
+      grid-template-columns:1fr;
     }
 
     .edu-card{
-      grid-column: span 12;
       background:#fff;
       border:1px solid #e5e7eb;
       border-radius:16px;
@@ -133,7 +131,7 @@
 
     .edu-card:hover{
       transform: translateY(-4px);
-      box-shadow: 0 18px 35px rgba(0,0,0,.08);
+      box-shadow:0 18px 35px rgba(0,0,0,.08);
       border-color:#c7d2fe;
     }
 
@@ -164,6 +162,7 @@
       color:#6b7280;
       font-size:14px;
       line-height:1.6;
+      text-align:left;
     }
 
     .badge-row{
@@ -189,7 +188,7 @@
 
     .edu-body{
       display:grid;
-      grid-template-columns: 1.35fr 0.65fr;
+      grid-template-columns:1.35fr 0.65fr;
       gap:18px;
       align-items:start;
     }
@@ -231,7 +230,6 @@
       gap:4px;
       margin-bottom:10px;
     }
-
     .metric:last-child{ margin-bottom:0; }
 
     .metric .big{
@@ -240,26 +238,15 @@
       font-weight:900;
       letter-spacing:-0.02em;
     }
-
     .metric .small{
       color:#6b7280;
       font-size:13px;
       line-height:1.4;
     }
 
-    .divider{
-      height:1px;
-      background:#e5e7eb;
-      margin:22px 0;
-    }
-
     @media (max-width: 900px){
-      .edu-body{
-        grid-template-columns: 1fr;
-      }
-      .badge-row{
-        justify-content:flex-start;
-      }
+      .edu-body{ grid-template-columns:1fr; }
+      .badge-row{ justify-content:flex-start; max-width:none; }
       .hero h1{ font-size:44px; }
     }
 
@@ -273,11 +260,15 @@
         margin-right:14px;
         margin-bottom:8px;
       }
-      .hero{
-        padding:62px 8%;
-      }
+      .hero{ padding:62px 8%; }
       .hero h1{ font-size:38px; }
       .wrap{ padding:44px 8%; }
+    }
+
+    footer{
+      padding:30px 8%;
+      text-align:center;
+      color:#6b7280;
     }
   </style>
 </head>
@@ -379,11 +370,12 @@
         <div class="edu-body">
           <div class="edu-text">
             Completed a 4-month exchange program at Coventry University to deepen academic exposure to financial analysis methods and strengthen
-            cross-cultural learning in a new academic environment.
+            cross-cultural learning in a new academic environment. Completed a dissertation comparing conventional and Islamic unit trust performance in Malaysia from
+            2013–2022, applying quantitative evaluation of key performance metrics and earning a distinction.
             <ul>
-              <li>Dissertation (Distinction): <strong>“A Comparison Performance of Conventional Unit Trusts and Islamic Unit Trusts in Malaysia (2013–2022)”</strong>, evaluating performance differences using quantitative measures.</li>
-              <li>Strengthened practical research capability in portfolio performance evaluation and investment strategy assessment.</li>
-              <li>Developed leadership and adaptability through supporting incoming juniors via a student exchange sharing session.</li>
+              <li>Research strengthened understanding of Islamic finance, portfolio performance evaluation, and investment strategy.</li>
+              <li>Recognised as a senior student by supporting incoming juniors through a sharing session on adapting to the UK education system.</li>
+              <li>Developed intercultural communication, adaptability, and leadership skills through the exchange experience.</li>
             </ul>
           </div>
 
@@ -409,7 +401,7 @@
       <article class="edu-card">
         <div class="edu-head">
           <div class="edu-degree">
-            <h3>Bachelor in Finance and Investment (Honours) — Tunku Abdul Rahman University of Management and Technology (TAR UMT)</h3>
+            <h3>Bachelor in Finance and Investment (Honours) — Tunku Abdul Rahman University of Management and Technology</h3>
             <div class="edu-meta">June 2021 – June 2023 | Kuala Lumpur, Malaysia</div>
           </div>
           <div class="badge-row">
@@ -421,14 +413,16 @@
 
         <div class="edu-body">
           <div class="edu-text">
-            Awarded a full scholarship based on distinction in diploma studies and maintained consistent academic excellence across the program.
-            Graduation achieved with distinction, supported by multiple placements on Dean’s List and President’s List.
+            Awarded a Full Scholarship based on distinction in diploma studies and consistently achieved academic excellence across the program.
+            Graduation achieved with distinction, supported by multiple placements on the Dean’s List and President’s List. Developed a solid foundation in financial management,
+            investment analysis, and portfolio management.
             <ul>
-              <li>Vice President — <strong>Bursa Young Investor Club</strong>: organised workshops and trading simulations to improve student market understanding.</li>
-              <li>President — <strong>Malaysia Investment Symposium</strong>: led a national event connecting industry professionals, students, and academics.</li>
-              <li>Student Advisor — <strong>Malaysia Youth Trading Competition</strong>: provided mentorship and guidance to competitors.</li>
-              <li>Placed <strong>2nd Runner-Up</strong> at the Malaysian Finance Expert Convention (case study analysis and strategy development).</li>
-              <li>Represented TAR UMT in the <strong>MFPC National Financial Planning e-Tournament</strong>.</li>
+              <li>Vice President — <strong>Bursa Young Investor Club</strong>: organised events, workshops, and trading simulations to enhance students’ understanding of stock markets and investment strategies.</li>
+              <li>President — <strong>Malaysia Investment Symposium</strong>: led a national event bringing together industry professionals, students, and academics to discuss developments in finance and investment.</li>
+              <li>Student Advisor — <strong>Malaysia Youth Trading Competition</strong>: provided guidance and mentorship to students participating in trading competitions.</li>
+              <li>Treasurer — <strong>Photography Society</strong>: handled budgeting and strengthened organisational and financial management through club initiatives.</li>
+              <li>Placed <strong>2nd Runner-Up</strong> at the Malaysian Finance Expert Convention (University of Malaysia), demonstrating strong case analysis and strategy development.</li>
+              <li>Represented TARUMT in the MFPC National Financial Planning e-Tournament, applying academic knowledge in practical financial planning settings.</li>
             </ul>
           </div>
 
@@ -436,15 +430,15 @@
             <h4>Standout Outcomes</h4>
             <div class="metric">
               <div class="big">Full Scholar</div>
-              <div class="small">Scholarship on distinction in prior diploma</div>
+              <div class="small">Scholarship awarded based on distinction in prior studies</div>
             </div>
             <div class="metric">
               <div class="big">Dean’s/Pres.</div>
-              <div class="small">3 Dean’s List placements, 1 President’s List</div>
+              <div class="small">3 Dean’s List placements, 1 President’s List placement</div>
             </div>
             <div class="metric">
-              <div class="big">2nd Runner-Up</div>
-              <div class="small">National-level finance case competition</div>
+              <div class="big">Top Placement</div>
+              <div class="small">2nd Runner-Up (national finance case convention)</div>
             </div>
           </aside>
         </div>
@@ -458,36 +452,35 @@
             <div class="edu-meta">June 2019 – May 2021 | Pulau Pinang, Malaysia</div>
           </div>
           <div class="badge-row">
-            <div class="badge">9 A’s in SPM</div>
+            <div class="badge">Full Scholarship</div>
             <div class="badge">Distinction</div>
-            <div class="badge">CFP • Insurance License</div>
           </div>
         </div>
 
         <div class="edu-body">
           <div class="edu-text">
-            Earned a full scholarship after achieving 9 A’s in SPM and consistently performed at a high academic level, graduating with distinction.
-            Built a strong foundation in financial principles, investment analysis, and business economics.
+            Pursued my Diploma in Finance and Investment at TARUC, earning a Full Scholarship based on academic excellence. Achieved 9 A’s in the SPM examinations and graduated with Distinction.
+            The diploma program provided a strong foundation in financial principles, investment analysis, and business economics, preparing for more advanced studies and a career in the financial sector.
             <ul>
               <li>President — <strong>Bursa Young Investor Club</strong>: promoted financial literacy through workshops, investment competitions, and educational seminars.</li>
-              <li>President — <strong>Rookie Investor Accelerator: From Noob to Swag</strong>: guided students from foundational to advanced investment strategies.</li>
-              <li>Vice President — <strong>Photography Club</strong>: coordinated events including Prom Night responsibilities.</li>
-              <li>Served as Photographer and MC for <strong>Voice of Rahman</strong> talent show.</li>
-              <li>Guest Speaker for TARUC Investment Trading Competition on <strong>Fundamental & Technical Analysis</strong>.</li>
-              <li>Achieved <strong>1st Runner-Up</strong> in Volleyball (Sports Day).</li>
-              <li>Passed the <strong>Certified Financial Planner (CFP)</strong> exam and obtained an <strong>insurance agent license</strong> on first attempt.</li>
+              <li>President — <strong>Rookie Investor Accelerator: From Noob to Swag</strong>: guided students through foundational and advanced investment strategies.</li>
+              <li>Vice President — <strong>Photography Club</strong>: coordinated club activities, including serving as main photographer for Prom Night and producing the university’s promotional video.</li>
+              <li>Served as Photographer and Master of Ceremonies (MC) for <strong>Voice of Rahman</strong>, sharpening public speaking, event coordination, and photography skills.</li>
+              <li>Guest Speaker for the TARUC Investment Trading Competition on <strong>Fundamental and Technical Analysis</strong>.</li>
+              <li>Achieved <strong>1st Runner-Up</strong> in Volleyball during TARUC’s Sports Day.</li>
+              <li>Obtained the <strong>Certified Financial Planner (CFP)</strong> qualification and secured an insurance agent license on the first attempt.</li>
             </ul>
           </div>
 
           <aside class="edu-side">
             <h4>Standout Outcomes</h4>
             <div class="metric">
-              <div class="big">9 A’s</div>
-              <div class="small">SPM academic achievement leading to full scholarship</div>
+              <div class="big">Full Scholarship</div>
+              <div class="small">Based on academic excellence</div>
             </div>
             <div class="metric">
               <div class="big">Distinction</div>
-              <div class="small">Diploma graduation outcome</div>
+              <div class="small">Graduation outcome</div>
             </div>
             <div class="metric">
               <div class="big">CFP + License</div>
@@ -500,7 +493,7 @@
     </div>
   </main>
 
-  <footer style="padding:30px 8%; text-align:center; color:#6b7280;">
+  <footer>
     © Yi Shien Oon
   </footer>
 </body>
