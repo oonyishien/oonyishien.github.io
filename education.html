@@ -6,6 +6,7 @@
   <title>Education | Yi Shien Oon</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/favicon.png" type="image/png" />
 
   <style>
     *{ box-sizing:border-box; }
@@ -93,7 +94,7 @@
       max-width:860px;
     }
 
-    .wrap{
+    main{
       padding:52px 8%;
       max-width:1200px;
       margin:0 auto;
@@ -244,31 +245,24 @@
       line-height:1.4;
     }
 
-    @media (max-width: 900px){
-      .edu-body{ grid-template-columns:1fr; }
-      .badge-row{ justify-content:flex-start; max-width:none; }
-      .hero h1{ font-size:44px; }
-    }
-
-    @media (max-width: 600px){
-      nav{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-      nav a{
-        margin-left:0;
-        margin-right:14px;
-        margin-bottom:8px;
-      }
-      .hero{ padding:62px 8%; }
-      .hero h1{ font-size:38px; }
-      .wrap{ padding:44px 8%; }
-    }
-
     footer{
       padding:30px 8%;
       text-align:center;
       color:#6b7280;
+    }
+
+    @media (max-width: 900px){
+      .edu-body{ grid-template-columns:1fr; }
+      .badge-row{ justify-content:flex-start; max-width:none; }
+      .hero h1{ font-size:44px; }
+      nav{ flex-direction:column; align-items:flex-start; }
+    }
+
+    @media (max-width: 600px){
+      .hero{ padding:62px 8%; }
+      .hero h1{ font-size:38px; }
+      main{ padding:44px 8%; }
+      nav a{ margin-right:14px; margin-left:0; }
     }
   </style>
 </head>
@@ -299,7 +293,7 @@
     </div>
   </section>
 
-  <main class="wrap">
+  <main>
     <h2 class="section-title">Academic Programs & Key Achievements</h2>
     <p class="lead">
       Each program below highlights both your formal qualifications and the standout outcomes you earned—distinctions, competitive performance, and
@@ -308,7 +302,6 @@
 
     <div class="edu-grid">
 
-      <!-- Master -->
       <article class="edu-card">
         <div class="edu-head">
           <div class="edu-degree">
@@ -353,7 +346,6 @@
         </div>
       </article>
 
-      <!-- Coventry -->
       <article class="edu-card">
         <div class="edu-head">
           <div class="edu-degree">
@@ -397,7 +389,6 @@
         </div>
       </article>
 
-      <!-- TAR UMT -->
       <article class="edu-card">
         <div class="edu-head">
           <div class="edu-degree">
@@ -423,6 +414,7 @@
               <li>Treasurer — <strong>Photography Society</strong>: handled budgeting and strengthened organisational and financial management through club initiatives.</li>
               <li>Placed <strong>2nd Runner-Up</strong> at the Malaysian Finance Expert Convention (University of Malaysia), demonstrating strong case analysis and strategy development.</li>
               <li>Represented TARUMT in the MFPC National Financial Planning e-Tournament, applying academic knowledge in practical financial planning settings.</li>
+              <li>Certified Financial Planner (CFP) and insurance agent license, completed to strengthen qualification depth alongside degree study.</li>
             </ul>
           </div>
 
@@ -444,7 +436,6 @@
         </div>
       </article>
 
-      <!-- TARUC Diploma -->
       <article class="edu-card">
         <div class="edu-head">
           <div class="edu-degree">
@@ -459,16 +450,15 @@
 
         <div class="edu-body">
           <div class="edu-text">
-            Pursued my Diploma in Finance and Investment at TARUC, earning a Full Scholarship based on academic excellence. Achieved 9 A’s in the SPM examinations and graduated with Distinction.
+            Pursued my Diploma in Finance and Investment at TARUC, earning a Full Scholarship based on academic excellence and graduating with Distinction.
             The diploma program provided a strong foundation in financial principles, investment analysis, and business economics, preparing for more advanced studies and a career in the financial sector.
             <ul>
               <li>President — <strong>Bursa Young Investor Club</strong>: promoted financial literacy through workshops, investment competitions, and educational seminars.</li>
               <li>President — <strong>Rookie Investor Accelerator: From Noob to Swag</strong>: guided students through foundational and advanced investment strategies.</li>
               <li>Vice President — <strong>Photography Club</strong>: coordinated club activities, including serving as main photographer for Prom Night and producing the university’s promotional video.</li>
-              <li>Served as Photographer and Master of Ceremonies (MC) for <strong>Voice of Rahman</strong>, sharpening public speaking, event coordination, and photography skills.</li>
-              <li>Guest Speaker for the TARUC Investment Trading Competition on <strong>Fundamental and Technical Analysis</strong>.</li>
+              <li>Served as Photographer and Master of Ceremonies (MC) for the Voice of Rahman talent show.</li>
+              <li>Invited as Guest Speaker for the TARUC Investment Trading Competition on Fundamental and Technical Analysis.</li>
               <li>Achieved <strong>1st Runner-Up</strong> in Volleyball during TARUC’s Sports Day.</li>
-              <li>Obtained the <strong>Certified Financial Planner (CFP)</strong> qualification and secured an insurance agent license on the first attempt.</li>
             </ul>
           </div>
 
@@ -482,10 +472,6 @@
               <div class="big">Distinction</div>
               <div class="small">Graduation outcome</div>
             </div>
-            <div class="metric">
-              <div class="big">CFP + License</div>
-              <div class="small">First-attempt qualification</div>
-            </div>
           </aside>
         </div>
       </article>
@@ -493,8 +479,6 @@
     </div>
   </main>
 
-  <footer>
-    © Yi Shien Oon
-  </footer>
+  <footer>© Yi Shien Oon</footer>
 </body>
 </html>
