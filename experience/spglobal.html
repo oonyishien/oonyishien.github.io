@@ -48,7 +48,13 @@
       margin-bottom:16px;
     }
     .hero h1{ font-size:48px; margin:0 0 14px; }
-    .hero p{ font-size:18px; max-width:860px; line-height:1.8; margin:0 0 22px; }
+    .hero p{
+      font-size:18px;
+      max-width:860px;
+      line-height:1.8;
+      margin:0 0 22px;
+      color:#cbd5e1; /* lighter for readability */
+    }
 
     .hero-stats{
       display:grid;
@@ -65,9 +71,17 @@
     .stat h2{ margin:0 0 6px; font-size:26px; }
     .stat p{ margin:0; color:rgba(255,255,255,.86); }
 
-    section{ padding:50px 8%; max-width:1000px; }
+    section{
+      padding:50px 8%;
+      max-width:1000px;
+    }
     section h2{ margin:0 0 14px; }
-    section p{ line-height:1.85; color:#374151; }
+
+    section p{
+      line-height:1.85;
+      color:#374151;
+      margin:0 0 14px;
+    }
 
     .grid{
       display:grid;
@@ -81,8 +95,12 @@
       padding:18px;
       box-shadow:0 10px 24px rgba(0,0,0,.04);
     }
-    ul{ line-height:1.85; color:#374151; }
-    li{ margin-bottom:10px; }
+    .card h3{ margin:4px 0 10px; color:#0f172a; }
+    ul{
+      line-height:1.85;
+      color:#374151;
+      padding-left:18px;
+    }
 
     .badges{
       display:flex;
@@ -99,26 +117,17 @@
       font-size:14px;
     }
 
+    footer{
+      text-align:center;
+      padding:30px 8%;
+      color:#6b7280;
+    }
+
     .topbar{
       display:flex;
       justify-content:space-between;
       align-items:center;
       gap:16px;
-    }
-    .back{
-      display:inline-block;
-      background:#0f172a;
-      color:#fff;
-      padding:10px 14px;
-      border-radius:10px;
-      text-decoration:none;
-      font-weight:700;
-    }
-
-    footer{
-      text-align:center;
-      padding:30px 8%;
-      color:#6b7280;
     }
   </style>
 </head>
@@ -141,22 +150,39 @@
   <section class="hero">
     <span class="company">S&amp;P Global</span>
     <h1>Limited Partner Specialist</h1>
+
     <p>
       Supporting some of Asia-Pacific's largest institutional investors through high-quality private market investment data, operational excellence, and stakeholder collaboration.
     </p>
 
     <div class="hero-stats">
-      <div class="stat"><h2>US$550B+</h2><p>Largest Portfolio Managed</p></div>
-      <div class="stat"><h2>1,000+</h2><p>Private Market Funds</p></div>
-      <div class="stat"><h2>900+</h2><p>Client Queries Resolved</p></div>
-      <div class="stat"><h2>100%</h2><p>Green Client Rating</p></div>
+      <div class="stat">
+        <h2>US$550B+</h2>
+        <p>Largest Portfolio Managed</p>
+      </div>
+      <div class="stat">
+        <h2>1,000+</h2>
+        <p>Private Market Funds</p>
+      </div>
+      <div class="stat">
+        <h2>900+</h2>
+        <p>Client Queries Resolved</p>
+      </div>
+      <div class="stat">
+        <h2>100%</h2>
+        <p>Green Client Rating</p>
+      </div>
+      <div class="stat">
+        <h2>Launched</h2>
+        <p>S&amp;P Global Private Equity Index</p>
+      </div>
     </div>
   </section>
 
   <section>
     <h2>Overview</h2>
     <p>
-      As a Limited Partner Specialist at S&amp;P Global, I supported institutional investors across Asia-Pacific by managing complex private market investment data and reporting processes. My clients included retirement funds, asset management companies, insurance companies, trust banks and development banks located across Hong Kong, Singapore, Australia, Japan, Korea and the Philippines.
+      As a Limited Partner Specialist at S&amp;P Global, I supported institutional investors across Asia-Pacific by managing complex private market investment data and reporting processes. My clients included retirement funds, asset management companies, insurance companies, trust banks, and development banks located across Hong Kong, Singapore, Australia, Japan, Korea, and the Philippines.
     </p>
     <p>
       I was entrusted with managing the firm's largest institutional client portfolio, representing more than <strong>US$550 billion in Assets Under Management</strong> across more than <strong>1,000 private market funds</strong>. My work focused on ensuring investment data accuracy, improving operational efficiency, and maintaining long-term client satisfaction through proactive stakeholder engagement.
@@ -166,11 +192,21 @@
   <section>
     <h2>Institutional Investors Supported</h2>
     <div class="grid">
-      <div class="card">🏦<h3>Retirement Funds</h3></div>
-      <div class="card">📈<h3>Asset Management Companies</h3></div>
-      <div class="card">🛡️<h3>Insurance Companies</h3></div>
-      <div class="card">🏛️<h3>Trust Banks</h3></div>
-      <div class="card">🌏<h3>Development Banks</h3></div>
+      <div class="card">
+        <h3>🏦 Retirement Funds</h3>
+      </div>
+      <div class="card">
+        <h3>📈 Asset Management Companies</h3>
+      </div>
+      <div class="card">
+        <h3>🛡️ Insurance Companies</h3>
+      </div>
+      <div class="card">
+        <h3>🏛️ Trust Banks</h3>
+      </div>
+      <div class="card">
+        <h3>🌏 Development Banks</h3>
+      </div>
     </div>
   </section>
 
@@ -189,43 +225,57 @@
 
   <section>
     <h2>Investment Data Lifecycle</h2>
+
     <div class="grid">
       <div class="card">
-        <h3>Fund Onboarding</h3>
-        <p>Managed onboarding of private market funds while ensuring completeness and reporting accuracy.</p>
+        <h3>Fund Onboarding (with GP Consent)</h3>
+        <p>
+          Managed onboarding of private market funds, including GP consent, while ensuring data completeness and reporting accuracy.
+        </p>
       </div>
+
       <div class="card">
-        <h3>Cash Transactions</h3>
-        <p>Maintained capital call and distribution data together with transaction reconciliation.</p>
+        <h3>Fund Level Data Management</h3>
+        <p>
+          Managed fund-level data, including Schedule of Investment verification and fund-level reporting review.
+        </p>
       </div>
+
       <div class="card">
-        <h3>NAV Reconciliation</h3>
-        <p>Validated Net Asset Value reporting and resolved discrepancies across investment portfolios.</p>
+        <h3>Cash Transactions (Aligned to GP Reporting)</h3>
+        <p>
+          Maintained capital call and distribution data, reconciling total capital calls and distributions to GP reporting and tracking inside and outside commitment alignment.
+        </p>
       </div>
+
       <div class="card">
-        <h3>Performance Monitoring</h3>
-        <p>Tracked IRR, remaining capital commitment and portfolio exposure.</p>
+        <h3>NAV Reconciliation (Adjusted for Non-NAV Impacts)</h3>
+        <p>
+          Validated NAV reporting by excluding post-cash transactions and adjusting for transactions that did not impact NAV.
+        </p>
       </div>
+
       <div class="card">
-        <h3>Portfolio Company Data</h3>
-        <p>Maintained operational and investment metrics for underlying portfolio companies.</p>
+        <h3>Performance Monitoring (QoQ IRR Movement)</h3>
+        <p>
+          Tracked IRR and quarter-on-quarter IRR movement, alongside remaining capital commitment and portfolio exposure monitoring.
+        </p>
       </div>
+
       <div class="card">
-        <h3>Stakeholder Engagement</h3>
-        <p>Worked directly with institutional clients to resolve reporting issues and improve data quality.</p>
+        <h3>Portfolio Company Data (DataBridge Template)</h3>
+        <p>
+          Maintained operational and investment metrics for underlying portfolio companies through the DataBridge template.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Stakeholder Engagement (Resolve Data Variance)</h3>
+        <p>
+          Worked directly with institutional clients to resolve data variance, reporting issues, and investment data discrepancies.
+        </p>
       </div>
     </div>
-  </section>
-
-  <section>
-    <h2>Selected Achievements</h2>
-    <ul>
-      <li>Managed the firm's largest institutional client portfolio with more than <strong>US$550 billion in Assets Under Management.</strong></li>
-      <li>Maintained a <strong>100% Green Client Satisfaction Rating</strong> across all assigned institutional clients through consistent service quality and proactive communication.</li>
-      <li>Recognised as one of the team's highest performers in resolving investment data discrepancies, successfully resolving more than <strong>900 client queries</strong>.</li>
-      <li>Participated in the successful launch of S&amp;P Global's <strong>Private Equity Index</strong> by supporting large-scale data migration and integration across fund-level and portfolio company datasets.</li>
-      <li>Led regular client catch-up meetings to better understand reporting requirements, strengthen stakeholder relationships and improve overall client experience.</li>
-    </ul>
   </section>
 
   <section>
@@ -249,7 +299,7 @@
   <section>
     <h2>Key Takeaways</h2>
     <p>
-      My experience at S&amp;P Global strengthened my understanding of institutional investing and the operational infrastructure supporting private markets. Beyond technical expertise in investment data management, the role reinforced the importance of accuracy, stakeholder communication and continuous process improvement when supporting some of the world's largest institutional investors.
+      My experience at S&amp;P Global strengthened my understanding of institutional investing and the operational infrastructure supporting private markets. Beyond technical expertise in investment data management, the role reinforced the importance of accuracy, stakeholder communication, and continuous process improvement when supporting some of the world's largest institutional investors.
     </p>
   </section>
 
