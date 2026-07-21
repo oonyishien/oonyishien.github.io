@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Doo Financial | Operations Executive | Yi Shien Oon</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -41,9 +40,7 @@
       transition: color .2s ease;
     }
 
-    nav a:hover{
-      color:#1e40af;
-    }
+    nav a:hover{ color:#1e40af; }
 
     .hero{
       padding:80px 8%;
@@ -76,6 +73,7 @@
       line-height:1.8;
       margin:0 0 22px;
       color:#cbd5e1;
+      text-align: left;
     }
 
     .hero-stats{
@@ -103,11 +101,12 @@
       margin:0 0 6px;
       font-size:26px;
       color:#ffffff;
+      text-align:left;
     }
 
     .stat p{
       margin:0;
-      color:rgba(255,255,255,.9);
+      color:rgba(255,255,255,.92);
       font-size:15px;
       line-height:1.5;
       text-align:left;
@@ -128,7 +127,7 @@
       line-height:1.85;
       color:#374151;
       margin:0 0 14px;
-      text-align:justify;
+      text-align: justify;
     }
 
     .grid{
@@ -139,11 +138,6 @@
 
     .grid-3{
       grid-template-columns:repeat(3,1fr);
-      width:100%;
-    }
-
-    .grid-6{
-      grid-template-columns:repeat(6,1fr);
       width:100%;
     }
 
@@ -167,6 +161,7 @@
       margin:4px 0 10px;
       color:#0f172a;
       font-size:18px;
+      text-align:left;
     }
 
     .card p{
@@ -177,18 +172,46 @@
     }
 
     .department-card{
-      text-align:center;
       display:flex;
       flex-direction:column;
       justify-content:center;
       min-height:120px;
+      text-align:center;
+    }
+
+    .department-card .icon{
+      font-size:28px;
+      margin-bottom:8px;
     }
 
     .department-card h3{
+      margin:0;
       font-size:16px;
-      margin:8px 0 0;
       text-align:center;
     }
+
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+      align-items:start;
+    }
+
+    .bullet-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+      width:100%;
+    }
+
+    ul{
+      margin:0;
+      padding-left:18px;
+      color:#374151;
+      line-height:1.9;
+    }
+
+    li{ margin-bottom:6px; }
 
     .badges{
       display:flex;
@@ -205,6 +228,7 @@
       font-weight:600;
       font-size:14px;
       transition: background .2s ease, transform .2s ease;
+      text-align:center;
     }
 
     .badges span:hover{
@@ -219,21 +243,10 @@
     }
 
     @media (max-width: 1000px){
-      .grid-3{
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      }
-
-      .grid-6{
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      }
-
-      .hero-stats{
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      section{
-        max-width:1000px;
-      }
+      .grid-3{ grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+      .hero-stats{ grid-template-columns: repeat(2,1fr); }
+      section{ max-width:1000px; }
+      .split{ grid-template-columns: 1fr; }
     }
 
     @media (max-width: 600px){
@@ -242,35 +255,21 @@
         align-items:flex-start;
         gap:12px;
       }
-
       nav a{
         margin-left:0;
         margin-right:14px;
         display:inline-block;
         margin-bottom:8px;
       }
-
-      .hero{
-        padding:60px 8%;
-      }
-
-      .hero h1{
-        font-size:38px;
-      }
-
-      .hero-stats{
-        grid-template-columns:1fr;
-      }
-
-      section{
-        padding:40px 8%;
-      }
+      .hero{ padding:60px 8%; }
+      .hero h1{ font-size:38px; }
+      .hero-stats{ grid-template-columns: 1fr; }
+      section{ padding:40px 8%; }
     }
   </style>
 </head>
 
 <body>
-
   <header>
     <nav>
       <div><strong>Yi Shien Oon</strong></div>
@@ -286,195 +285,132 @@
   </header>
 
   <section class="hero">
-    <span class="company">Doo Financial, Doo Group</span>
+    <span class="company">Doo Financial, Doo Financial</span>
 
     <h1>Operations Executive</h1>
 
     <p>
-      Participated in Doo Group's Management Trainee Program, rotating across key operational departments to build a holistic understanding of financial operations, trading systems, client onboarding, settlement processes, support functions, and risk management.
+      Participated in Doo Financial’s Management Trainee Program, rotating across three core operational areas—Client Management, Trading &amp; Dealing, and Financial Operations—to build a strong end-to-end understanding of internal workflows before specialising in the Operations department.
     </p>
 
     <div class="hero-stats">
       <div class="stat">
-        <h2>6</h2>
+        <h2>3</h2>
         <p>Department Rotations</p>
       </div>
-
       <div class="stat">
-        <h2>Global</h2>
-        <p>Client Onboarding Exposure</p>
+        <h2>Client</h2>
+        <p>Onboarding Exposure</p>
       </div>
-
       <div class="stat">
-        <h2>UAT/PRD</h2>
-        <p>Trading System Testing</p>
+        <h2>Systems</h2>
+        <p>Trading Operations</p>
       </div>
-
       <div class="stat">
-        <h2>Multi-Currency</h2>
-        <p>Financial Operations</p>
+        <h2>Ops</h2>
+        <p>Multi-Currency Finance</p>
       </div>
     </div>
   </section>
 
   <section>
     <h2>Overview</h2>
-
     <p>
-      As an Operations Executive under the Management Trainee Program at Doo Group, I rotated across six critical departments: Client Management, Trading &amp; Dealing, Financial Operations, Settlement, Support, and Risk Management. This cross-departmental exposure equipped me with a broad understanding of the company’s operating model before specialising further within the Operations Department.
+      As part of the Management Trainee Program at <strong>Doo Financial</strong>, I rotated across three core departments—<strong>Client Management</strong>, <strong>Trading &amp; Dealing</strong>, and <strong>Financial Operations</strong>.
+      This exposure helped me understand how client requirements translate into trading workflows and how those workflows feed into back-office financial processing, reconciliations, and operational controls.
     </p>
-
     <p>
-      The role provided hands-on exposure to client onboarding, trading system configuration, operational testing, fund movement processes, internal reconciliations, exchange rate updates, and multi-regional operational workflows. Through this experience, I developed a stronger understanding of how front-end client requirements, trading infrastructure, and back-office operations connect within a financial services environment.
+      Before moving into the Operations function, I documented the end-to-end internal workflow from scratch and organised it in <strong>Confluence</strong>.
+      Since Operations oversees and coordinates across teams, understanding how each department works (and what information flows between them) was essential for ensuring smooth operations and consistent execution.
     </p>
   </section>
 
   <section>
     <h2>Department Rotation Exposure</h2>
-
-    <div class="grid grid-6">
+    <div class="grid grid-3">
       <div class="card department-card">
-        <div>👥</div>
+        <div class="icon">👥</div>
         <h3>Client Management</h3>
       </div>
-
       <div class="card department-card">
-        <div>📈</div>
+        <div class="icon">📈</div>
         <h3>Trading &amp; Dealing</h3>
       </div>
-
       <div class="card department-card">
-        <div>💰</div>
+        <div class="icon">💰</div>
         <h3>Financial Operations</h3>
       </div>
-
-      <div class="card department-card">
-        <div>🔄</div>
-        <h3>Settlement</h3>
-      </div>
-
-      <div class="card department-card">
-        <div>🛠️</div>
-        <h3>Support</h3>
-      </div>
-
-      <div class="card department-card">
-        <div>🛡️</div>
-        <h3>Risk Management</h3>
-      </div>
     </div>
   </section>
 
   <section>
-    <h2>Core Responsibilities</h2>
+    <h2>Core Responsibilities (by Department)</h2>
 
-    <div class="grid grid-3">
-
+    <div class="split">
       <div class="card">
         <h3>Client Management</h3>
-        <p>
-          Responsible for onboarding individual, corporate, and institutional clients globally, ensuring smooth account setup processes while adhering to regulatory and compliance standards across different regions.
-        </p>
+        <div class="bullet-grid">
+          <ul>
+            <li>Supported onboarding for individual, corporate, and institutional clients globally, focusing on smooth account setup processes while aligning with regulatory and compliance requirements.</li>
+            <li>Learned the full onboarding cycle from account opening to configuring rebate structures aligned to client needs and improving operational efficiency.</li>
+            <li>Understood how client setup details influence downstream trading configuration and operational handling.</li>
+          </ul>
+        </div>
       </div>
 
       <div class="card">
-        <h3>Full Client Onboarding Cycle</h3>
-        <p>
-          Managed the full client onboarding cycle, from account opening to implementing rebate structures tailored to diverse client requirements, supporting stronger client satisfaction and operational efficiency.
-        </p>
+        <h3>Trading &amp; Dealing</h3>
+        <div class="bullet-grid">
+          <ul>
+            <li>Participated in the configuration and maintenance of trading systems (including Product Center and Upper Broker platforms) to support reliable workflows across regions.</li>
+            <li>Provided operational support for testing and integrating new features into trading systems, ensuring alignment between client expectations and broker requirements.</li>
+            <li>Contributed to UAT and production readiness testing to identify potential issues early before full rollout.</li>
+          </ul>
+        </div>
       </div>
+    </div>
 
-      <div class="card">
-        <h3>Trading System Configuration</h3>
-        <p>
-          Participated in the configuration and maintenance of trading systems, including Product Center and Upper Broker platforms, helping ensure system integrity across multiple regions.
-        </p>
+    <div style="height:16px;"></div>
+
+    <div class="card">
+      <h3>Financial Operations</h3>
+      <div class="bullet-grid">
+        <ul>
+          <li>Overseen fund-in and fund-out processes, ensuring accurate and timely internal transfers, reconciliations, and fund management for both retail and institutional clients.</li>
+          <li>Managed and updated exchange rates in a multi-currency environment to support compliant and accurate financial transactions.</li>
+          <li>Connected trading outputs to financial processing steps by learning how operational data is structured, validated, and reconciled end-to-end.</li>
+        </ul>
       </div>
-
-      <div class="card">
-        <h3>System Testing &amp; Integration</h3>
-        <p>
-          Provided operational support for testing and integrating new features into trading systems, ensuring alignment with both client and broker requirements.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>UAT &amp; PRD Testing</h3>
-        <p>
-          Contributed to user acceptance testing and production system testing to ensure smooth functionality, identify potential issues, and support full-scale implementation readiness.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Fund-In &amp; Fund-Out Operations</h3>
-        <p>
-          Oversaw fund-in and fund-out processes, ensuring accurate and timely internal transfers, reconciliations, and fund management for both retail and institutional clients.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Exchange Rate Management</h3>
-        <p>
-          Managed and updated exchange rates for clients, supporting accurate and compliant financial transactions within a multi-currency operating environment.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Operational Coordination</h3>
-        <p>
-          Worked across multiple operational functions to understand how client-facing service, trading infrastructure, and back-office financial processes interact within the wider business.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Cross-Department Learning</h3>
-        <p>
-          Built practical exposure across Client Management, Trading &amp; Dealing, Financial Operations, Settlement, Support, and Risk Management to develop a rounded understanding of financial operations.
-        </p>
-      </div>
-
     </div>
   </section>
 
   <section>
-    <h2>Platforms &amp; Knowledge Areas</h2>
-
+    <h2>Workflow Documentation &amp; Tools</h2>
+    <p>
+      To prepare for the Operations department, I documented the internal workflow end-to-end from scratch in <strong>Confluence</strong>, capturing how information and documents move between Client Management, Trading &amp; Dealing, and Financial Operations.
+      I also used <strong>Power BI</strong> to structure views for operational tracking and analysis where appropriate.
+    </p>
     <div class="badges">
+      <span>Confluence</span>
+      <span>Power BI</span>
+      <span>UAT / PRD Testing</span>
       <span>Client Onboarding</span>
-      <span>Operations Management</span>
-      <span>Trading Systems</span>
-      <span>Product Center</span>
-      <span>Upper Broker</span>
-      <span>UAT Testing</span>
-      <span>PRD Testing</span>
-      <span>Financial Operations</span>
-      <span>Fund-In / Fund-Out</span>
-      <span>Internal Transfers</span>
+      <span>Trading Operations</span>
+      <span>Multi-Currency Finance</span>
       <span>Reconciliation</span>
-      <span>Exchange Rate Management</span>
-      <span>Multi-Currency Transactions</span>
-      <span>Settlement</span>
-      <span>Risk Management</span>
-      <span>Client Support</span>
-      <span>Compliance Awareness</span>
+      <span>Internal Transfers</span>
+      <span>Operations Documentation</span>
     </div>
   </section>
 
   <section>
     <h2>Key Takeaways</h2>
-
     <p>
-      My time at Doo Group strengthened my understanding of financial operations from both a client-facing and operational infrastructure perspective. The rotation across six departments helped me understand how onboarding, trading systems, financial operations, settlement, support, and risk management work together to deliver reliable services to global clients.
-    </p>
-
-    <p>
-      This experience also enhanced my ability to work across teams, understand system requirements, support operational testing, and manage financial processes in a fast-moving multi-currency environment. It provided a strong foundation for my later work in institutional investment data management and private market operations.
+      This rotation strengthened my understanding of how client onboarding decisions, trading workflows, and financial operations connect operationally.
+      By documenting the internal end-to-end workflow in Confluence, I built a foundation to support the Operations function effectively—where coordination, process clarity, and cross-team execution are critical.
     </p>
   </section>
 
-  <footer>
-    © Yi Shien Oon
-  </footer>
-
+  <footer>© Yi Shien Oon</footer>
 </body>
 </html>
