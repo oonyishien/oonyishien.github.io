@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Career | Yi Shien Oon</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
@@ -18,17 +19,24 @@
       background:white;
       padding:20px 8%;
       box-shadow:0 2px 12px rgba(0,0,0,.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
     nav{
       display:flex;
       justify-content:space-between;
       align-items:center;
+      gap: 16px;
     }
     nav a{
       text-decoration:none;
       color:#374151;
       margin-left:25px;
+      transition: color .2s ease;
     }
+    nav a:hover{ color:#1e40af; }
+
     .hero{
       padding:90px 8%;
       background:linear-gradient(135deg,#0f172a,#1e3a8a);
@@ -43,14 +51,17 @@
       max-width:800px;
       line-height:1.8;
     }
+
     .section{
       padding:70px 8%;
     }
+
     .timeline{
       border-left:4px solid #2563eb;
       padding-left:35px;
       margin-top:40px;
     }
+
     .timeline-item{
       margin-bottom:45px;
       background:white;
@@ -58,13 +69,19 @@
       border-radius:12px;
       box-shadow:0 8px 30px rgba(0,0,0,.06);
     }
+
     .timeline-item h2{
       margin-top:0;
       color:#0f172a;
+      font-size:24px;
     }
+
     .timeline-item p{
       color:#4b5563;
+      line-height: 1.7;
+      margin: 10px 0 0;
     }
+
     .button{
       display:inline-block;
       background:#0f172a;
@@ -74,22 +91,36 @@
       text-decoration:none;
       margin-top:15px;
     }
+
     footer{
       padding:40px;
       text-align:center;
       color:#6b7280;
     }
+
+    @media (max-width: 900px){
+      nav{
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav a{
+        margin-left: 0;
+        margin-right: 16px;
+        margin-bottom: 6px;
+      }
+    }
+    @media (max-width: 600px){
+      .hero h1{ font-size: 40px; }
+      .hero{ padding: 60px 8%; }
+      .section{ padding: 45px 8%; }
+    }
   </style>
 </head>
 
 <body>
-
   <header>
     <nav>
-      <div>
-        <strong>Yi Shien Oon</strong>
-      </div>
-
+      <div><strong>Yi Shien Oon</strong></div>
       <div>
         <a href="index.html">Home</a>
         <a href="career.html">Career</a>
@@ -104,7 +135,8 @@
   <section class="hero">
     <h1>Professional Career</h1>
     <p>
-      From financial markets to institutional private equity data, my career has been built around helping global investment organisations make better decisions through high-quality investment data, operational excellence and stakeholder collaboration.
+      From financial markets to institutional private equity data, my career has been built around helping global investment
+      organisations make better decisions through high-quality investment data, operational excellence and stakeholder collaboration.
     </p>
   </section>
 
@@ -112,63 +144,80 @@
     <h2>Career Timeline</h2>
 
     <div class="timeline">
-
       <div class="timeline-item">
-        <h2>S&P Global</h2>
+        <h2>S&amp;P Global</h2>
+
         <p>
           <strong>Limited Partner Specialist</strong><br>
           December 2024 – July 2026
         </p>
+
         <p>
           Managing institutional investment data across APAC covering retirement funds, asset managers, insurance companies, trust banks and development banks.
         </p>
-        <a class="button" href="experience/spglobal.html" style="background:#2563eb;">
+
+        <a class="button" href="experience/spglobal.html" style="background:#2563eb;margin-left:0;">
           Read Full Experience →
         </a>
       </div>
 
       <div class="timeline-item">
         <h2>Doo Financial</h2>
+
         <p>
           <strong>Operations Executive</strong><br>
           September 2024 – November 2024
         </p>
+
         <p>
           Rotated across Client Management, Trading &amp; Dealing, and Financial Operations, building end-to-end understanding of internal workflows before supporting the Operations function.
         </p>
-        <a class="button" href="experience/doo.html">
+
+        <a class="button" href="experience/doo.html" style="margin-left:0;">
           Read Full Experience →
         </a>
       </div>
 
       <div class="timeline-item">
         <h2>Affin Hwang Investment Bank</h2>
+
         <p>
           <strong>Proprietary Trader Intern</strong><br>
           November 2022 – January 2023
         </p>
+
         <p>
           Supported daily trading workflows through technical stock analysis, market/news briefing, and order execution support for senior traders.
         </p>
-        <a class="button" href="experience/affin.html">
+
+        <a class="button" href="experience/affin.html" style="margin-left:0;">
           Read Full Experience →
         </a>
       </div>
 
       <div class="timeline-item">
-        <h2>Kenanga Investment Bank</h2>
-        <p>
-          <strong>Market Representative</strong>
-        </p>
-      </div>
+        <h2>Kenanga Investment Bank Berhad</h2>
 
+        <p>
+          <strong>Market Representative</strong><br>
+          Finz, Partnership with Investment Partners Remiser Group<br>
+          June 2022 – June 2023
+        </p>
+
+        <p>
+          Worked closely with the Investment Partners Remiser Group, led Finz, and engaged public investors through stock/portfolio analysis, client relationship management, and seminar speeches.
+        </p>
+
+        <a class="button" href="experience/kenanga.html" style="margin-left:0;">
+          Read Full Experience →
+        </a>
+      </div>
     </div>
   </section>
 
   <footer>
     © Yi Shien Oon
   </footer>
-
 </body>
 
 </html>
