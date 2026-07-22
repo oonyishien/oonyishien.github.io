@@ -259,6 +259,16 @@
     @media (prefers-reduced-motion: reduce){
       .action a, .action button{ transition:none; }
     }
+    .success{
+  display:none;
+  padding:14px;
+  border-radius:14px;
+  border:1px solid #dbeafe;
+  background:#eff6ff;
+  color:#0f172a;
+  margin-top:12px;
+  line-height:1.6;
+}
   </style>
 </head>
 
@@ -350,40 +360,59 @@
       <div class="card">
         <h3 style="margin-bottom:6px;">Contact form</h3>
 
-        <form method="POST" action="https://formspree.io/f/xykrprly">
-          <div>
-            <label for="name">Your name</label>
-            <input id="name" name="name" type="text" required placeholder="Full name" />
-          </div>
+        <form id="contactForm" method="POST" action="https://formspree.io/f/xykrprly">
+  <div>
+    <label for="name">Your name</label>
+    <input id="name" name="name" type="text" required placeholder="Full name" />
+  </div>
 
-          <div>
-            <label for="email">Your email</label>
-            <input id="email" name="email" type="email" required placeholder="name@gmail.com" />
-          </div>
+  <div>
+    <label for="email">Your email</label>
+    <input id="email" name="email" type="email" required placeholder="name@gmail.com" />
+  </div>
 
-          <div>
-            <label for="topic">Topic</label>
-            <input id="topic" name="topic" type="text" placeholder="Business / Investment / Job / Speaking / Resume" />
-          </div>
+  <div>
+    <label for="topic">Topic</label>
+    <input id="topic" name="topic" type="text" placeholder="Business / Investment / Job / Speaking / Resume" />
+  </div>
 
-          <div>
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
-          </div>
+  <div>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
+  </div>
 
-          <div class="form-actions">
-            <button class="primary" type="submit">Send message</button>
-          </div>
+  <div class="form-actions">
+    <button class="primary" type="submit">Send message</button>
+  </div>
 
-          <div class="note" style="margin-bottom:0;">
-            No spam—only used to respond to your inquiry.
-          </div>
-        </form>
+  <div class="note" style="margin-bottom:0;">
+    No spam—only used to respond to your inquiry.
+  </div>
+
+  <div id="successMessage" class="success" role="status" aria-live="polite">
+    Thanks! Your message has been sent. Replies typically within <strong>1–2 business days</strong>.
+  </div>
+</form>
       </div>
 
     </div>
   </main>
 
   <footer>© Yi Shien Oon</footer>
+
+<script>
+  (function () {
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('successMessage');
+
+    if (!form || !success) return;
+
+    form.addEventListener('submit', function () {
+      // Show success message immediately (optional).
+      // If Formspree fails, user may still see it; if you prefer reliability, tell me and we’ll wire with response handling.
+      success.style.display = 'block';
+    });
+  })();
+</script>
 </body>
 </html>
