@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leadership | Yi Shien Oon</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/website-logo.png" type="image/png" />
+
+  <style>
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family:Inter, sans-serif;
+      background:#f8fafc;
+      color:#111827;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      background:#fff;
+      border-bottom:1px solid #e5e7eb;
+      padding:16px 8%;
+      z-index:10;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:#374151;
+      margin-left:18px;
+      font-size:15px;
+      transition:color .2s ease;
+    }
+    nav a:hover{ color:#1e40af; }
+
+    .hero{
+      padding:88px 8%;
+      background:
+        radial-gradient(circle at top right, rgba(59,130,246,0.38), transparent 38%),
+        radial-gradient(circle at bottom left, rgba(30,64,175,0.28), transparent 45%),
+        linear-gradient(135deg,#0f172a,#1e3a8a);
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 30%),
+        radial-gradient(circle at 80% 10%, rgba(255,255,255,0.06), transparent 28%);
+      pointer-events:none;
+    }
+
+    .hero-inner{ position:relative; max-width:1100px; }
+
+    .tag{
+      display:inline-block;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:800;
+      letter-spacing:.02em;
+      margin-bottom:18px;
+    }
+
+    .hero h1{
+      margin:0 0 14px;
+      font-size:56px;
+      line-height:1.05;
+    }
+
+    .hero p{
+      margin:0;
+      font-size:18px;
+      line-height:1.8;
+      color:#cbd5e1;
+      max-width:860px;
+    }
+
+    main{
+      padding:52px 8%;
+      max-width:1200px;
+      margin:0 auto;
+    }
+
+    .section-title{
+      color:#0f172a;
+      margin:0 0 14px;
+      font-size:28px;
+      letter-spacing:-0.01em;
+    }
+
+    .lead{
+      color:#374151;
+      margin:0 0 26px;
+      line-height:1.85;
+      text-align:justify;
+      font-size:16px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+      width:100%;
+    }
+
+    .exp{
+      background:#fff;
+      border:1px solid #e5e7eb;
+      border-radius:16px;
+      padding:18px;
+      box-shadow:0 10px 24px rgba(0,0,0,.04);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      display:flex;
+      flex-direction:column;
+      min-height:240px;
+    }
+
+    .exp:hover{
+      transform: translateY(-4px);
+      box-shadow:0 18px 35px rgba(0,0,0,.08);
+      border-color:#c7d2fe;
+    }
+
+    .exp-top{ display:flex; flex-direction:column; gap:6px; }
+
+    .exp h3{
+      margin:0;
+      color:#0f172a;
+      font-size:18px;
+      line-height:1.3;
+    }
+
+    .exp .role{
+      margin-top:6px;
+      font-weight:800;
+      color:#111827;
+      font-size:14px;
+      letter-spacing:.01em;
+    }
+
+    .exp .meta{
+      color:#6b7280;
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .exp button{
+      margin-top:auto;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid #e5e7eb;
+      background:#ffffff;
+      color:#0f172a;
+      font-weight:700;
+      cursor:pointer;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      text-align:left;
+    }
+
+    .exp button:hover{
+      transform: translateY(-1px);
+      border-color:#c7d2fe;
+      background:#f8fafc;
+    }
+
+    .exp button:focus{
+      outline: 3px solid rgba(37,99,235,.25);
+      outline-offset:2px;
+    }
+
+    .detail{
+      margin-top:12px;
+      display:none;
+      border-top:1px dashed #e5e7eb;
+      padding-top:12px;
+    }
+
+    .detail p{
+      margin:0;
+      color:#374151;
+      line-height:1.85;
+      font-size:15px;
+      text-align:justify;
+    }
+
+    .detail ul{
+      margin:10px 0 0;
+      padding-left:18px;
+      line-height:1.9;
+      color:#374151;
+      font-size:15px;
+    }
+
+    .detail li{ margin:6px 0; }
+
+    .empty{
+      color:#6b7280;
+      font-size:14px;
+      line-height:1.6;
+      margin:0;
+    }
+
+    @media (max-width: 1000px){
+      .grid-3{ grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); }
+      nav{ flex-direction:column; align-items:flex-start; }
+    }
+
+    @media (max-width: 600px){
+      .hero{ padding:62px 8%; }
+      .hero h1{ font-size:38px; }
+      main{ padding:44px 8%; }
+      nav a{ margin-right:14px; margin-left:0; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .exp, .exp:hover, .exp button{ transition:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div><strong>Yi Shien Oon</strong></div>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="career.html">Career</a>
+        <a href="projects.html">Projects</a>
+        <a href="education.html">Education</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="tag">Leadership • Club Management • Events • Public Speaking</div>
+      <h1>Leadership</h1>
+      <p>
+        A curated set of leadership roles and student-led initiatives—focused on building teams, delivering events, and driving measurable impact.
+      </p>
+    </div>
+  </section>
+
+  <main>
+    <h2 class="section-title">Leadership Experiences</h2>
+    <p class="lead">Tap “Show details” to expand each role. Paste more content later and I’ll refine the wording.</p>
+
+    <div class="grid-3">
+
+      <article class="exp">
+        <div class="exp-top">
+          <h3>Malaysia Investment Symposium (MIS)</h3>
+          <div class="role">President</div>
+          <div class="meta">June 2022 – October 2022 | Bursa Young Investor Club, TARUMT KL</div>
+        </div>
+
+        <button type="button" class="toggle" aria-expanded="false">Show details</button>
+
+        <div class="detail" aria-hidden="true">
+          <p>
+            I conceived MIS during my first week of leadership at BYIC, then recruited a 100+ undergraduate committee to design and deliver the symposium at TARUMT.
+          </p>
+          <ul>
+            <li>Built the committee within 2–3 weeks; assembled a dynamic team of 100+ student leaders.</li>
+            <li>Delivered full registration within eight weeks: <strong>500 participants</strong>.</li>
+            <li>Secured <strong>RM200,000</strong> in cash and in-kind sponsorships to fund event delivery.</li>
+            <li>Hosted industry speakers across markets and themes, including RHB Investment Bank, UOB Asset Management, Wealthfort, and FPAM (VIP guest + opening speaker).</li>
+            <li>Achieved national reach: participation from <strong>23 universities</strong> across Malaysia.</li>
+            <li>Maintained execution discipline through <strong>three meetings per week</strong> and a guiding principle: “If the plan doesn’t work, change the plan, but never change the goal.”</li>
+            <li>Received recognition as a milestone corporate event for TARUMT and a benchmark for BYIC Malaysia.</li>
+          </ul>
+          <p style="margin-top:10px;">
+            The event turned a new idea into a repeatable standard for corporate symposium delivery at TARUMT and beyond.
+          </p>
+        </div>
+      </article>
+
+      <article class="exp">
+        <div class="exp-top">
+          <h3>Bursa Young Investor Club (BYIC)</h3>
+          <div class="role">Vice President</div>
+          <div class="meta">June 2022 – June 2023 | Bursa Young Investor Club, TARUMT KL</div>
+        </div>
+
+        <button type="button" class="toggle" aria-expanded="false">Show details</button>
+        <div class="detail" aria-hidden="true">
+          <p class="empty">Paste your full BYIC Vice President (TARUMT KL) details here later.</p>
+        </div>
+      </article>
+
+      <article class="exp">
+        <div class="exp-top">
+          <h3>Bursa Young Investor Club (BYIC)</h3>
+          <div class="role">President</div>
+          <div class="meta">May 2020 – May 2021 | Bursa Young Investor Club, TARUC Penang</div>
+        </div>
+
+        <button type="button" class="toggle" aria-expanded="false">Show details</button>
+        <div class="detail" aria-hidden="true">
+          <p class="empty">Paste your BYIC President (TARUC Penang) details here later.</p>
+        </div>
+      </article>
+
+      <article class="exp">
+        <div class="exp-top">
+          <h3>Rookie Investor Accelerator: From Noob to Swag</h3>
+          <div class="role">President</div>
+          <div class="meta">October 2020 – November 2020 | Bursa Young Investor Club, TARUC Penang</div>
+        </div>
+
+        <button type="button" class="toggle" aria-expanded="false">Show details</button>
+        <div class="detail" aria-hidden="true">
+          <p class="empty">Paste your Rookie Investor Accelerator details here later.</p>
+        </div>
+      </article>
+
+      <article class="exp">
+        <div class="exp-top">
+          <h3>Photography Society</h3>
+          <div class="role">Treasurer</div>
+          <div class="meta">June 2022 – June 2023 | Photography Society, TARUMT KL</div>
+        </div>
+
+        <button type="button" class="toggle" aria-expanded="false">Show details</button>
+        <div class="detail" aria-hidden="true">
+          <p class="empty">Paste your Photography Society Treasurer details here later.</p>
+        </div>
+      </article>
+
+      <article class="exp">
+        <div class="exp-top">
+          <h3>Photography Society</h3>
+          <div class="role">Vice President</div>
+          <div class="meta">May 2020 – May 2021 | Photography Society, TARUC Penang</div>
+        </div>
+
+        <button type="button" class="toggle" aria-expanded="false">Show details</button>
+        <div class="detail" aria-hidden="true">
+          <p class="empty">Paste your Photography Society Vice President details here later.</p>
+        </div>
+      </article>
+
+      <article class="exp">
+        <div class="exp-top">
+          <h3>Boys' Brigade</h3>
+          <div class="role">Vice President</div>
+          <div class="meta">July 2017 – June 2018 | Chung Ling High School Penang</div>
+        </div>
+
+        <button type="button" class="toggle" aria-expanded="false">Show details</button>
+        <div class="detail" aria-hidden="true">
+          <p class="empty">Paste your Boys' Brigade details here later.</p>
+        </div>
+      </article>
+
+      <article class="exp">
+        <div class="exp-top">
+          <h3>Amateur Wireless Society</h3>
+          <div class="role">President</div>
+          <div class="meta">July 2017 – June 2018 | Chung Ling High School Penang</div>
+        </div>
+
+        <button type="button" class="toggle" aria-expanded="false">Show details</button>
+        <div class="detail" aria-hidden="true">
+          <p class="empty">Paste your Amateur Wireless Society details here later.</p>
+        </div>
+      </article>
+
+      <article class="exp">
+        <div class="exp-top">
+          <h3>The Abandon Pyramid</h3>
+          <div class="role">President</div>
+          <div class="meta">May 2016 – July 2016 | Chung Ling High School Penang</div>
+        </div>
+
+        <button type="button" class="toggle" aria-expanded="false">Show details</button>
+        <div class="detail" aria-hidden="true">
+          <p class="empty">Paste your The Abandon Pyramid details here later.</p>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer>© Yi Shien Oon</footer>
+
+  <script>
+    (function () {
+      const cards = document.querySelectorAll('.exp');
+
+      cards.forEach(card => {
+        const btn = card.querySelector('.toggle');
+        const detail = card.querySelector('.detail');
+
+        if (!btn || !detail) return;
+
+        btn.addEventListener('click', () => {
+          const currentlyOpen = detail.style.display === 'block';
+
+          // Close all details for a cleaner UX
+          document.querySelectorAll('.detail').forEach(d => {
+            d.style.display = 'none';
+            d.setAttribute('aria-hidden', 'true');
+          });
+
+          document.querySelectorAll('.toggle').forEach(b => {
+            b.setAttribute('aria-expanded', 'false');
+            b.textContent = 'Show details';
+          });
+
+          if (!currentlyOpen) {
+            detail.style.display = 'block';
+            detail.setAttribute('aria-hidden', 'false');
+            btn.setAttribute('aria-expanded', 'true');
+            btn.textContent = 'Hide details';
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
