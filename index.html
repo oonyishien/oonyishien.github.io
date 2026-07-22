@@ -295,6 +295,52 @@
     @media (prefers-reduced-motion: reduce){
       .focus-card, .focus-card:hover, .btn, .btn:hover{ transition:none }
     }
+
+    /* --- Force header to stay one line --- */
+@media (max-width: 700px){
+  .header-inner{
+    padding-left:4% !important;
+    padding-right:4% !important;
+  }
+  nav{
+    flex-wrap: nowrap !important;
+    overflow: visible !important;
+    gap: 10px !important;
+  }
+  nav a{
+    font-size: 13.5px !important;
+  }
+}
+
+/* --- Focus areas: clean 2-column layout on tablet/phone --- */
+@media (max-width: 1100px){
+  .focus-row{
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+}
+
+@media (max-width: 520px){
+  .focus-row{
+    padding-left: 6% !important;
+    padding-right: 6% !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  /* ensure all cards have similar internal spacing so buttons align */
+  .focus-card{
+    padding: 16px 14px !important;
+    min-height: 150px !important;
+  }
+  .focus-card p{
+    min-height: 42px !important;
+    margin-bottom: 12px !important;
+  }
+}
+
+/* --- Prevent any horizontal overflow --- */
+body{ overflow-x:hidden; }
   </style>
 </head>
 
