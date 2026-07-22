@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Yi Shien Oon | Finance Portfolio</title>
 
   <link rel="icon" href="images/website-logo.png" type="image/png">
@@ -10,11 +10,12 @@
 
   <style>
     body{margin:0;font-family:Inter,sans-serif;background:#f8fafc;color:#111827}
-    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;z-index:10}
 
-    /* Header layout: keep everything aligned to the same content width */
+    header{
+      position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;z-index:10
+    }
     .header-inner{
-      padding:18px 8%;
+      padding:14px 8%;
       max-width:1200px;
       margin:0 auto;
       width:100%;
@@ -24,14 +25,26 @@
       gap:16px;
     }
 
-    nav{display:flex;justify-content:space-between;align-items:center}
-    nav a{margin-left:24px;text-decoration:none;color:#374151}
+    nav{display:flex;justify-content:flex-end;align-items:center;flex-wrap:nowrap}
+    nav a{
+      margin-left:18px;
+      text-decoration:none;
+      color:#374151;
+      font-size:15px;
+      white-space:nowrap;
+      transition: color .2s ease;
+    }
+    nav a:hover{ color:#1e40af; }
 
     /* HERO */
     .hero{
-      display:grid;grid-template-columns:2fr 1fr;gap:34px;
-      padding:78px 8%;align-items:center;
-      max-width:1200px;margin:0 auto;
+      max-width:1200px;
+      margin:0 auto;
+      padding:78px 8%;
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      gap:34px;
+      align-items:center;
     }
     .hero .left{position:relative}
     .hero .left:before{
@@ -44,6 +57,7 @@
         radial-gradient(circle at 70% 80%, rgba(37,99,235,0.10), transparent 40%);
       z-index:-1;
     }
+
     .tag{
       display:inline-block;
       background:rgba(37,99,235,.10);
@@ -64,6 +78,7 @@
       font-size:16.5px;
     }
 
+    .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
     .btn{
       display:inline-flex;
       align-items:center;
@@ -83,20 +98,19 @@
     .btn:hover{transform:translateY(-1px);opacity:.98;box-shadow:0 16px 36px rgba(2,6,23,.16)}
     .btn-blue{background:#1e40af; box-shadow:none}
 
-    .hero .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-
     .hero img{
-      max-width:100%;
+      width:100%;
+      max-width:420px;
       border-radius:22px;
       border:1px solid rgba(229,231,235,.9);
       box-shadow:0 18px 50px rgba(2,6,23,.10)
     }
 
-    /* Snapshot */
+    /* SNAPSHOT */
     .snapshot{
       max-width:1200px;
       margin:0 auto;
-      padding:0 8% 20px;
+      padding:0 8% 18px;
       display:grid;
       grid-template-columns:repeat(4, 1fr);
       gap:14px;
@@ -122,23 +136,24 @@
       line-height:1.4;
     }
 
+    /* Section head */
     .sectionHead{
-      padding:0 8% 0;
       max-width:1200px;
       margin:0 auto;
+      padding:18px 8% 0;
     }
     .sectionHead h2{margin:0;font-size:28px;color:#0f172a;letter-spacing:-0.01em}
 
-    /* Focus row: prevent overlap/overtake by using safer minmax widths */
+    /* Focus row: keep cards spaced better */
     .focus-row{
-      padding:18px 8% 70px;
       max-width:1200px;
       margin:0 auto;
+      padding:18px 8% 60px;
       display:grid;
-      grid-template-columns:repeat(5, minmax(170px, 1fr));
-      gap:18px;
-      overflow:hidden; /* extra safety against overflow */
+      grid-template-columns:repeat(5, minmax(0, 1fr));
+      gap:16px;
     }
+
     .focus-card{
       background:#fff;
       border:1px solid #e5e7eb;
@@ -149,6 +164,7 @@
       height:100%;
       box-shadow:0 10px 24px rgba(2,6,23,.04);
       transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      min-height:160px;
     }
     .focus-card:hover{
       transform: translateY(-4px);
@@ -161,7 +177,7 @@
       line-height:1.6;
       margin:0 0 14px;
       font-size:14.5px;
-      min-height:44px;
+      flex:0 0 auto;
     }
     .focus-card a{
       margin-top:auto;
@@ -178,6 +194,7 @@
       font-weight:700;
       transition: transform .15s ease, background .15s ease, border-color .15s ease;
       box-sizing:border-box;
+      white-space:nowrap;
     }
     .focus-card a:hover{
       transform: translateY(-1px);
@@ -187,41 +204,45 @@
 
     /* About */
     #about{
-      padding:0 8% 70px;
       max-width:1200px;
       margin:0 auto;
+      padding:0 8% 70px;
     }
     #about h2{margin:0 0 10px;color:#0f172a}
     #about p{margin:0;color:#374151;line-height:1.8}
 
     footer{text-align:center;padding:40px 8%;color:#6b7280}
 
-    /* Responsive fixes */
-    @media(max-width:1100px){
-      .focus-row{
-        grid-template-columns:repeat(3, minmax(220px, 1fr));
-      }
-      .snapshot{grid-template-columns:repeat(2, 1fr)}
-      .hero{padding:60px 8%; grid-template-columns:1fr}
-      .hero img{max-width:360px}
-    }
+    /* ===== Mobile/Tablet Fixes ===== */
 
-    @media(max-width:700px){
-      nav{flex-direction:column; align-items:flex-start}
-      .header-inner{padding:16px 8%}
-      .hero{grid-template-columns:1fr; padding:56px 8%; gap:18px}
+    /* Keep header horizontal on tablets/phones */
+    @media(max-width: 900px){
+      .hero{grid-template-columns:1fr;padding:60px 8%;gap:18px}
       .hero h1{font-size:42px}
+      .hero p{font-size:16px;max-width:none}
+      .hero img{max-width:520px}
+
+      .snapshot{grid-template-columns:repeat(2, 1fr)}
       .focus-row{
-        grid-template-columns:repeat(2, minmax(220px, 1fr));
+        grid-template-columns:repeat(2, minmax(0, 1fr));
         gap:14px;
-        padding-bottom:50px;
+        padding:18px 8% 56px;
       }
-      .snapshot{grid-template-columns:1fr}
+      .focus-card{min-height:150px}
     }
 
-    @media(max-width:420px){
-      .focus-row{grid-template-columns:1fr}
-      .hero img{max-width:100%}
+    @media(max-width: 520px){
+      .header-inner{padding:12px 6%}
+      nav a{margin-left:12px;font-size:14px}
+      .hero{padding:54px 8%}
+      .snapshot{grid-template-columns:1fr}
+      .focus-row{
+        grid-template-columns:1fr;
+        padding:18px 8% 48px;
+      }
+      .focus-card{min-height:auto}
+      .sectionHead{padding:16px 8% 0}
+      #about{padding:0 8% 60px}
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -233,10 +254,8 @@
 <body>
   <header>
     <div class="header-inner">
-      <nav>
-        <strong>Yi Shien Oon</strong>
-      </nav>
-      <nav>
+      <strong>Yi Shien Oon</strong>
+      <nav aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="career.html">Career</a>
         <a href="education.html">Education</a>
@@ -295,7 +314,7 @@
     <h2>My Focus Areas</h2>
   </div>
 
-  <section class="focus-row">
+  <section class="focus-row" aria-label="Focus areas">
     <div class="focus-card">
       <h3>💼 Career</h3>
       <p>Private markets, investment operations, and stakeholder-driven delivery.</p>
@@ -343,8 +362,6 @@
     </p>
   </section>
 
-  <footer>
-    © Yi Shien Oon
-  </footer>
+  <footer>© Yi Shien Oon</footer>
 </body>
 </html>
