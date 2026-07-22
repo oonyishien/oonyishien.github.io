@@ -58,10 +58,7 @@
         radial-gradient(circle at 80% 10%, rgba(255,255,255,0.06), transparent 28%);
       pointer-events:none;
     }
-    .hero-inner{
-      position:relative;
-      max-width:1100px;
-    }
+    .hero-inner{ position:relative; max-width:1100px; }
     .tag{
       display:inline-block;
       background:rgba(255,255,255,.12);
@@ -136,8 +133,11 @@
       display:flex;
       justify-content:space-between;
       gap:14px;
-      flex-wrap:wrap;
       align-items:flex-start;
+    }
+
+    .item-top .left{
+      min-width:0; /* important for flex text wrapping */
     }
 
     .item h3{
@@ -145,13 +145,20 @@
       color:#0f172a;
       font-size:16px;
       line-height:1.3;
+      font-weight:800;
     }
+
+    /* Stable meta column like the awards fix */
     .item .meta{
       color:#6b7280;
       font-size:13px;
       line-height:1.5;
       text-align:right;
-      min-width:220px;
+
+      flex: 0 0 190px;  /* fixed right rail */
+      max-width:190px;
+
+      word-break:break-word;
     }
 
     .item p{
@@ -176,6 +183,7 @@
       border-radius:999px;
       font-weight:700;
       font-size:12px;
+      line-height:1.2;
     }
 
     footer{
@@ -185,16 +193,35 @@
     }
 
     @media (max-width: 900px){
-      nav{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-      nav a{
-        margin-left:0;
-        margin-right:14px;
-      }
+      nav{ flex-direction:column; align-items:flex-start; }
+      nav a{ margin-left:0; margin-right:14px; display:inline-block; margin-bottom:6px; }
       .hero h1{ font-size:40px; }
       main{ padding:44px 8%; }
+
+      .item .meta{
+        flex: 0 0 160px;
+        max-width:160px;
+      }
+    }
+
+    @media (max-width: 600px){
+      .hero{ padding:62px 8%; }
+      .hero h1{ font-size:38px; }
+      .hero p{ font-size:16px; }
+
+      .item-top{
+        flex-direction:column;
+        gap:8px;
+      }
+      .item .meta{
+        flex: 0 0 auto;
+        max-width:none;
+        text-align:left;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{ scroll-behavior:auto; }
     }
   </style>
 </head>
@@ -218,7 +245,7 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="tag">Capital Markets • Finance • Exam-Driven Upskilling</div>
-      <h1>Licenses & Certifications</h1>
+      <h1>Licenses &amp; Certifications</h1>
       <p>
         Exam-based credentials and certifications that strengthen my capability in capital markets, financial statement literacy,
         and client-ready advisory fundamentals.
@@ -227,7 +254,7 @@
   </section>
 
   <main>
-    <h2 class="section-title"> Capital Markets & Finance</h2>
+    <h2 class="section-title">Capital Markets &amp; Finance</h2>
     <p class="lead">
       These credentials align with investment analysis and capital-markets foundations—supporting stronger reasoning when evaluating markets,
       reading financial statements, and communicating finance outcomes.
@@ -239,7 +266,9 @@
       <div class="list">
         <div class="item">
           <div class="item-top">
-            <h3>CFA Level I — Passed</h3>
+            <div class="left">
+              <h3>CFA Level I — Passed</h3>
+            </div>
             <div class="meta">Certification track milestone</div>
           </div>
           <p>
@@ -254,7 +283,9 @@
 
         <div class="item">
           <div class="item-top">
-            <h3>Certified Financial Planner (CFP)</h3>
+            <div class="left">
+              <h3>Certified Financial Planner (CFP)</h3>
+            </div>
             <div class="meta">Exam-based certification</div>
           </div>
           <p>
@@ -268,7 +299,9 @@
 
         <div class="item">
           <div class="item-top">
-            <h3>Life Insurance Agents &amp; Investment-Linked Life Insurance Examination</h3>
+            <div class="left">
+              <h3>Life Insurance Agents &amp; Investment-Linked Life Insurance Examination</h3>
+            </div>
             <div class="meta">Exam-based qualification</div>
           </div>
           <p>
@@ -281,46 +314,48 @@
         </div>
 
         <div class="item">
-  <div class="item-top">
-    <h3>Market Sales and Trading (Citi) — Job Simulation</h3>
-    <div class="meta">Assessment track certification</div>
-  </div>
-  <p>
-    Completed an exam/assessment-based job simulation focused on market sales and trading workflows to strengthen practical readiness
-    for market-facing execution and client/institutional interaction.
-  </p>
-  <div class="pill-row">
-    <div class="pill">Sales & Trading</div>
-    <div class="pill">Market Execution</div>
-  </div>
-</div>
+          <div class="item-top">
+            <div class="left">
+              <h3>Market Sales and Trading (Citi) — Job Simulation</h3>
+            </div>
+            <div class="meta">Assessment track certification</div>
+          </div>
+          <p>
+            Completed an exam/assessment-based job simulation focused on market sales and trading workflows to strengthen practical readiness for market-facing execution and client/institutional interaction.
+          </p>
+          <div class="pill-row">
+            <div class="pill">Sales &amp; Trading</div>
+            <div class="pill">Market Execution</div>
+          </div>
+        </div>
 
-<div class="item">
-  <div class="item-top">
-    <h3>Global Banking & Market (HSBC) — Job Simulation</h3>
-    <div class="meta">Assessment track certification</div>
-  </div>
-  <p>
-    Completed an exam/assessment-based job simulation focused on global banking and markets concepts to build stronger intuition for
-    how market products and institutional workflows connect.
-  </p>
-  <div class="pill-row">
-    <div class="pill">Global Banking</div>
-    <div class="pill">Markets</div>
-  </div>
-</div>
-
+        <div class="item">
+          <div class="item-top">
+            <div class="left">
+              <h3>Global Banking &amp; Market (HSBC) — Job Simulation</h3>
+            </div>
+            <div class="meta">Assessment track certification</div>
+          </div>
+          <p>
+            Completed an exam/assessment-based job simulation focused on global banking and markets concepts to build stronger intuition for how market products and institutional workflows connect.
+          </p>
+          <div class="pill-row">
+            <div class="pill">Global Banking</div>
+            <div class="pill">Markets</div>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="panel">
-      <h2>Capital Markets & Corporate Finance (Course Certifications)</h2>
+      <h2>Capital Markets &amp; Corporate Finance (Course Certifications)</h2>
 
       <div class="list">
-
         <div class="item">
           <div class="item-top">
-            <h3>Business Economics for Capital Markets — Corporate Finance Institute (CFI)</h3>
+            <div class="left">
+              <h3>Business Economics for Capital Markets — Corporate Finance Institute (CFI)</h3>
+            </div>
             <div class="meta">Exam-based certification</div>
           </div>
           <p>
@@ -330,7 +365,9 @@
 
         <div class="item">
           <div class="item-top">
-            <h3>Corporate Finance Fundamentals — Corporate Finance Institute (CFI)</h3>
+            <div class="left">
+              <h3>Corporate Finance Fundamentals — Corporate Finance Institute (CFI)</h3>
+            </div>
             <div class="meta">Exam-based certification</div>
           </div>
           <p>
@@ -344,7 +381,9 @@
 
         <div class="item">
           <div class="item-top">
-            <h3>Reading Financial Statements — Corporate Finance Institute (CFI)</h3>
+            <div class="left">
+              <h3>Reading Financial Statements — Corporate Finance Institute (CFI)</h3>
+            </div>
             <div class="meta">Exam-based certification</div>
           </div>
           <p>
@@ -358,7 +397,9 @@
 
         <div class="item">
           <div class="item-top">
-            <h3>Data Visualisation in Excel — Macquarie University</h3>
+            <div class="left">
+              <h3>Data Visualisation in Excel — Macquarie University</h3>
+            </div>
             <div class="meta">Exam-based certification</div>
           </div>
           <p>
@@ -372,7 +413,9 @@
 
         <div class="item">
           <div class="item-top">
-            <h3>Lean Six Sigma White Belt — Management &amp; Strategy Institute</h3>
+            <div class="left">
+              <h3>Lean Six Sigma White Belt — Management &amp; Strategy Institute</h3>
+            </div>
             <div class="meta">Exam-based certification</div>
           </div>
           <p>
@@ -386,7 +429,9 @@
 
         <div class="item">
           <div class="item-top">
-            <h3>Project Management Essentials — Management &amp; Strategy Institute</h3>
+            <div class="left">
+              <h3>Project Management Essentials — Management &amp; Strategy Institute</h3>
+            </div>
             <div class="meta">Exam-based certification</div>
           </div>
           <p>
@@ -400,7 +445,9 @@
 
         <div class="item">
           <div class="item-top">
-            <h3>Agile Practitioner — Tomorrow First (Institute for Agility &amp; Innovation)</h3>
+            <div class="left">
+              <h3>Agile Practitioner — Tomorrow First (Institute for Agility &amp; Innovation)</h3>
+            </div>
             <div class="meta">Exam-based certification</div>
           </div>
           <p>
@@ -414,7 +461,9 @@
 
         <div class="item">
           <div class="item-top">
-            <h3>Business Expansion — Sanata Clara University</h3>
+            <div class="left">
+              <h3>Business Expansion — Sanata Clara University</h3>
+            </div>
             <div class="meta">Exam-based course certification</div>
           </div>
           <p>
@@ -424,34 +473,27 @@
 
         <div class="item">
           <div class="item-top">
-            <h3>Initiating and Planning Projects — University of California</h3>
+            <div class="left">
+              <h3>Initiating and Planning Projects — University of California, Irvine (The Paul Merage School of Business)</h3>
+            </div>
             <div class="meta">Exam-based course certification</div>
           </div>
           <p>
             Improved capability in initiating and planning projects—supporting clearer scope definition and stakeholder-ready execution.
           </p>
         </div>
-
       </div>
     </div>
 
     <div class="panel">
       <h2>Broader Finance, Learning &amp; Human Capital (Exam-based Courses)</h2>
-      
- <div class="item">
-          <div class="item-top">
-            <h3>Financial Markets — Yale University</h3>
-            <div class="meta">Exam-based course certification</div>
-          </div>
-          <p>
-            Reinforced how financial markets function and how price discovery occurs across market participants.
-          </p>
-        </div>
-      
+
       <div class="list">
         <div class="item">
           <div class="item-top">
-            <h3>Introduction to Sustainable Finance — United Nations</h3>
+            <div class="left">
+              <h3>Introduction to Sustainable Finance — United Nations</h3>
+            </div>
             <div class="meta">Exam-based course certification</div>
           </div>
           <p>
@@ -461,7 +503,9 @@
 
         <div class="item">
           <div class="item-top">
-            <h3>Brand Management — University of London</h3>
+            <div class="left">
+              <h3>Brand Management: Aligning Business, Brand and Behaviour — University of London</h3>
+            </div>
             <div class="meta">Exam-based course certification</div>
           </div>
           <p>
@@ -471,7 +515,9 @@
 
         <div class="item">
           <div class="item-top">
-            <h3>Managing Social and Human Capital — The Wharton School</h3>
+            <div class="left">
+              <h3>Managing Social and Human Capital — The Wharton School</h3>
+            </div>
             <div class="meta">Exam-based course certification</div>
           </div>
           <p>
@@ -481,7 +527,9 @@
 
         <div class="item">
           <div class="item-top">
-            <h3>People Analytics — The Wharton School</h3>
+            <div class="left">
+              <h3>People Analytics — The Wharton School</h3>
+            </div>
             <div class="meta">Exam-based course certification</div>
           </div>
           <p>
@@ -491,11 +539,25 @@
 
         <div class="item">
           <div class="item-top">
-            <h3>Introduction to Psychology — Yale University</h3>
+            <div class="left">
+              <h3>Introduction to Psychology — Yale University</h3>
+            </div>
             <div class="meta">Exam-based course certification</div>
           </div>
           <p>
             Strengthened foundation in human decision-making and behavioural drivers that support more effective stakeholder communication.
+          </p>
+        </div>
+
+        <div class="item">
+          <div class="item-top">
+            <div class="left">
+              <h3>Financial Markets — Yale University</h3>
+            </div>
+            <div class="meta">Exam-based course certification</div>
+          </div>
+          <p>
+            Reinforced how financial markets function and how price discovery occurs across market participants.
           </p>
         </div>
       </div>
@@ -508,7 +570,6 @@
         and execute work with structured planning and process discipline—across capital markets and client-facing workflows.
       </p>
     </div>
-
   </main>
 
   <footer>© Yi Shien Oon</footer>
