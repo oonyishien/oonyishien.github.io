@@ -10,14 +10,28 @@
 
   <style>
     body{margin:0;font-family:Inter,sans-serif;background:#f8fafc;color:#111827}
-    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;padding:18px 8%;z-index:10}
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;z-index:10}
+
+    /* Header layout: keep everything aligned to the same content width */
+    .header-inner{
+      padding:18px 8%;
+      max-width:1200px;
+      margin:0 auto;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+    }
+
     nav{display:flex;justify-content:space-between;align-items:center}
     nav a{margin-left:24px;text-decoration:none;color:#374151}
 
     /* HERO */
     .hero{
       display:grid;grid-template-columns:2fr 1fr;gap:34px;
-      padding:78px 8%;align-items:center
+      padding:78px 8%;align-items:center;
+      max-width:1200px;margin:0 auto;
     }
     .hero .left{position:relative}
     .hero .left:before{
@@ -42,7 +56,6 @@
       margin-bottom:18px;
     }
     .hero h1{font-size:58px;margin:0;line-height:1.02}
-
     .hero p{
       color:#334155;
       line-height:1.75;
@@ -79,14 +92,6 @@
       box-shadow:0 18px 50px rgba(2,6,23,.10)
     }
 
-    /* Hero responsive */
-    @media(max-width:900px){
-      .hero{grid-template-columns:1fr; padding:60px 8%; gap:18px;}
-      .hero h1{font-size:42px}
-      .hero p{max-width:none; font-size:16px;}
-      .hero img{width:100%;}
-    }
-
     /* Snapshot */
     .snapshot{
       max-width:1200px;
@@ -102,6 +107,7 @@
       border-radius:16px;
       padding:14px 16px;
       box-shadow:0 10px 24px rgba(2,6,23,.03);
+      min-height:72px;
     }
     .snap .big{
       font-weight:900;
@@ -116,14 +122,6 @@
       line-height:1.4;
     }
 
-    @media(max-width:900px){
-      .snapshot{grid-template-columns:repeat(2, 1fr);}
-    }
-    @media(max-width:600px){
-      .snapshot{grid-template-columns:1fr;}
-    }
-
-    /* Section header */
     .sectionHead{
       padding:0 8% 0;
       max-width:1200px;
@@ -131,14 +129,15 @@
     }
     .sectionHead h2{margin:0;font-size:28px;color:#0f172a;letter-spacing:-0.01em}
 
-    /* Focus row: 5 items */
+    /* Focus row: prevent overlap/overtake by using safer minmax widths */
     .focus-row{
       padding:18px 8% 70px;
       max-width:1200px;
       margin:0 auto;
       display:grid;
-      grid-template-columns:repeat(5, 1fr);
+      grid-template-columns:repeat(5, minmax(170px, 1fr));
       gap:18px;
+      overflow:hidden; /* extra safety against overflow */
     }
     .focus-card{
       background:#fff;
@@ -162,7 +161,7 @@
       line-height:1.6;
       margin:0 0 14px;
       font-size:14.5px;
-      min-height:44px; /* keeps cards aligned */
+      min-height:44px;
     }
     .focus-card a{
       margin-top:auto;
@@ -186,17 +185,6 @@
       border-color:#93c5fd;
     }
 
-    @media(max-width:1100px){
-      .focus-row{grid-template-columns:repeat(3, 1fr); gap:14px; padding-bottom:50px;}
-    }
-    @media(max-width:700px){
-      .focus-row{grid-template-columns:repeat(2, 1fr); padding-bottom:50px;}
-      .focus-card p{min-height:42px;}
-    }
-    @media(max-width:420px){
-      .focus-row{grid-template-columns:1fr;}
-    }
-
     /* About */
     #about{
       padding:0 8% 70px;
@@ -207,14 +195,48 @@
     #about p{margin:0;color:#374151;line-height:1.8}
 
     footer{text-align:center;padding:40px 8%;color:#6b7280}
+
+    /* Responsive fixes */
+    @media(max-width:1100px){
+      .focus-row{
+        grid-template-columns:repeat(3, minmax(220px, 1fr));
+      }
+      .snapshot{grid-template-columns:repeat(2, 1fr)}
+      .hero{padding:60px 8%; grid-template-columns:1fr}
+      .hero img{max-width:360px}
+    }
+
+    @media(max-width:700px){
+      nav{flex-direction:column; align-items:flex-start}
+      .header-inner{padding:16px 8%}
+      .hero{grid-template-columns:1fr; padding:56px 8%; gap:18px}
+      .hero h1{font-size:42px}
+      .focus-row{
+        grid-template-columns:repeat(2, minmax(220px, 1fr));
+        gap:14px;
+        padding-bottom:50px;
+      }
+      .snapshot{grid-template-columns:1fr}
+    }
+
+    @media(max-width:420px){
+      .focus-row{grid-template-columns:1fr}
+      .hero img{max-width:100%}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .focus-card, .focus-card:hover, .btn, .btn:hover{ transition:none }
+    }
   </style>
 </head>
 
 <body>
   <header>
-    <nav>
-      <strong>Yi Shien Oon</strong>
-      <div>
+    <div class="header-inner">
+      <nav>
+        <strong>Yi Shien Oon</strong>
+      </nav>
+      <nav>
         <a href="index.html">Home</a>
         <a href="career.html">Career</a>
         <a href="education.html">Education</a>
@@ -222,8 +244,8 @@
         <a href="awards.html">Awards</a>
         <a href="certifications.html">Certifications</a>
         <a href="contact.html">Contact</a>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </header>
 
   <section class="hero">
