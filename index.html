@@ -44,7 +44,7 @@
       color:#334155;
       line-height:1.75;
       margin:16px 0 22px;
-      max-width:720px;
+      max-width:740px;
       font-size:16.5px;
     }
     .btn{
@@ -60,52 +60,125 @@
       transition: transform .15s ease, opacity .15s ease, box-shadow .15s ease;
       box-shadow:0 12px 28px rgba(2,6,23,.12);
       gap:10px;
+      border:0;
     }
     .btn:hover{transform:translateY(-1px);opacity:.98;box-shadow:0 16px 36px rgba(2,6,23,.16)}
-    .btn-blue{background:#1e40af}
+    .btn-blue{background:#1e40af; box-shadow:none}
     .hero .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-    .hero img{max-width:100%;border-radius:22px;border:1px solid rgba(229,231,235,.9);box-shadow:0 18px 50px rgba(2,6,23,.10)}
-    .cardgrid{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:18px;
-      padding:0 8% 70px;
-      max-width:1200px;margin:0 auto
+    .hero img{
+      max-width:100%;
+      border-radius:22px;
+      border:1px solid rgba(229,231,235,.9);
+      box-shadow:0 18px 50px rgba(2,6,23,.10)
     }
+
     .sectionHead{
-      display:flex;align-items:flex-end;justify-content:space-between;gap:16px;
-      padding:24px 8% 0;max-width:1200px;margin:0 auto
+      padding:0 8% 0;
+      max-width:1200px;
+      margin:0 auto;
     }
     .sectionHead h2{margin:0;font-size:28px;color:#0f172a;letter-spacing:-0.01em}
-    .sectionHead p{margin:0;color:#4b5563;line-height:1.6;max-width:560px}
-    .card{
-      background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:22px;
-      display:flex;flex-direction:column;height:100%;
-      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-      box-shadow:0 10px 24px rgba(2,6,23,.04);
+    .sectionHead p{margin:0;color:#4b5563;line-height:1.6;max-width:620px}
+
+    /* 5 items in one line */
+    .focus-row{
+      padding:18px 8% 70px;
+      max-width:1200px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(5, 1fr);
+      gap:18px;
     }
-    .card:hover{transform:translateY(-4px);border-color:#c7d2fe;box-shadow:0 18px 45px rgba(2,6,23,.08)}
-    .card h3{margin-top:0;margin-bottom:8px;font-size:18px;color:#0f172a}
-    .card p{color:#374151;line-height:1.7;margin:8px 0 0}
-    .card .card-actions{margin-top:auto;padding-top:16px}
-    .btn-card{
+    .focus-card{
+      background:#fff;
+      border:1px solid #e5e7eb;
+      border-radius:16px;
+      padding:18px 18px 16px;
+      display:flex;
+      flex-direction:column;
+      height:100%;
+      box-shadow:0 10px 24px rgba(2,6,23,.04);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .focus-card:hover{
+      transform: translateY(-4px);
+      border-color:#c7d2fe;
+      box-shadow:0 18px 45px rgba(2,6,23,.08)
+    }
+    .focus-card h3{margin:0 0 8px;font-size:18px;color:#0f172a}
+    .focus-card p{color:#374151;line-height:1.6;margin:0 0 14px;font-size:14.5px}
+    .focus-card a{
+      margin-top:auto;
       display:inline-flex;
       align-items:center;
       justify-content:center;
+      width:100%;
       background:#ffffff;
       border:1px solid #dbeafe;
       color:#0f172a;
-      padding:12px 16px;
+      padding:12px 14px;
       border-radius:12px;
       text-decoration:none;
       font-weight:700;
       transition: transform .15s ease, background .15s ease, border-color .15s ease;
-      width:100%;
     }
-    .btn-card:hover{transform:translateY(-1px);background:#eff6ff;border-color:#93c5fd}
-    footer{text-align:center;padding:40px;color:#6b7280}
-    @media(max-width:900px){
-      .hero{grid-template-columns:1fr;padding:60px 8%}
+    .focus-card a:hover{
+      transform: translateY(-1px);
+      background:#eff6ff;
+      border-color:#93c5fd;
+    }
+
+    /* Quick Snapshot */
+    .snapshot{
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 8% 20px;
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:14px;
+    }
+    .snap{
+      background:#ffffff;
+      border:1px solid #e5e7eb;
+      border-radius:16px;
+      padding:14px 16px;
+      box-shadow:0 10px 24px rgba(2,6,23,.03);
+    }
+    .snap .big{
+      font-weight:900;
+      color:#0f172a;
+      font-size:18px;
+      letter-spacing:-0.02em;
+    }
+    .snap .small{
+      margin-top:6px;
+      color:#6b7280;
+      font-size:13.5px;
+      line-height:1.4;
+    }
+
+    #about{
+      padding:0 8% 70px;
+      max-width:1200px;
+      margin:0 auto;
+    }
+    #about h2{margin:0 0 10px;color:#0f172a}
+    #about p{margin:0;color:#374151;line-height:1.8}
+
+    footer{text-align:center;padding:40px 8%;color:#6b7280}
+
+    @media(max-width:1100px){
+      .focus-row{grid-template-columns:repeat(3,1fr)}
+      .snapshot{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:700px){
+      .hero{grid-template-columns:1fr}
       .hero h1{font-size:42px}
+      .focus-row{grid-template-columns:repeat(2,1fr); padding-bottom:50px}
+      .snapshot{grid-template-columns:1fr}
+    }
+    @media(max-width:420px){
+      .focus-row{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -117,7 +190,6 @@
       <div>
         <a href="index.html">Home</a>
         <a href="career.html">Career</a>
-        <a href="projects.html">Projects</a>
         <a href="leadership.html">Leadership</a>
         <a href="education.html">Education</a>
         <a href="awards.html">Awards</a>
@@ -131,19 +203,16 @@
     <div class="left">
       <div class="tag">PRIVATE EQUITY • DATA MANAGEMENT • INVESTMENT</div>
       <h1>Hi, I'm<br>Yi Shien</h1>
+
       <p>
         I’m a finance professional with experience in private equity data management, institutional investment operations,
-        and investment analysis. At S&amp;P Global, I managed APAC Limited Partner investment data and reporting for leading institutional portfolios.
-        Beyond finance, I build and design my own learning projects to keep improving end-to-end.
+        and investment analysis. At S&amp;P Global, I managed APAC Limited Partner investment data and reporting for leading
+        institutional portfolios.
       </p>
 
       <div class="actions">
-        <a class="btn" href="career.html">
-          Explore My Career →
-        </a>
-        <a class="btn btn-blue" style="box-shadow:none" href="#" target="_blank">
-          Download Resume
-        </a>
+        <a class="btn" href="career.html">Explore My Career →</a>
+        <a class="btn btn-blue" href="#" target="_blank">Download Resume</a>
       </div>
     </div>
 
@@ -152,65 +221,81 @@
     </div>
   </section>
 
-  <div class="sectionHead">
-    <div>
-      <h2>My Focus Areas</h2>
-      <p>Professional journey, learning, and outcomes—built to be easy for recruiters to scan.</p>
+  <div class="snapshot">
+    <div class="snap">
+      <div class="big">US$550B+</div>
+      <div class="small">Largest institutional portfolio managed</div>
+    </div>
+    <div class="snap">
+      <div class="big">1,000+</div>
+      <div class="small">Private market funds supported</div>
+    </div>
+    <div class="snap">
+      <div class="big">900+</div>
+      <div class="small">Client queries & discrepancies resolved</div>
+    </div>
+    <div class="snap">
+      <div class="big">100%</div>
+      <div class="small">Green client satisfaction rating</div>
     </div>
   </div>
 
-  <!-- Explore My Portfolio: removed Projects and Beyond Finance -->
-  <section class="cardgrid">
-    <div class="card">
+  <div class="sectionHead">
+    <h2>My Focus Areas</h2>
+    <p>Clean, recruiter-friendly navigation to the most relevant sections of your portfolio.</p>
+  </div>
+
+  <section class="focus-row">
+    <div class="focus-card">
       <h3>💼 Career</h3>
-      <p>Private markets, investment data operations, and stakeholder-driven delivery.</p>
-      <div class="card-actions">
-        <a class="btn-card" href="career.html">View Career →</a>
-      </div>
+      <p>Private markets, investment operations, and stakeholder-driven delivery.</p>
+      <a href="career.html">View Career →</a>
     </div>
 
-    <div class="card">
+    <div class="focus-card">
       <h3>🎓 Education</h3>
       <p>Finance training, research work, simulation experience, and academic outcomes.</p>
-      <div class="card-actions">
-        <a class="btn-card" href="education.html">View Education →</a>
-      </div>
+      <a href="education.html">View Education →</a>
     </div>
 
-    <div class="card">
+    <div class="focus-card">
       <h3>🏆 Leadership</h3>
-      <p>Club leadership, event delivery, and community-building initiatives.</p>
-      <div class="card-actions">
-        <a class="btn-card" href="leadership.html">View Leadership →</a>
-      </div>
+      <p>Club leadership, events, public speaking, and community building.</p>
+      <a href="leadership.html">View Leadership →</a>
     </div>
 
-    <div class="card">
+    <div class="focus-card">
       <h3>🏅 Awards</h3>
-      <p>Dean’s/President’s List, scholarships, and competition placements.</p>
-      <div class="card-actions">
-        <a class="btn-card" href="awards.html">View Awards →</a>
-      </div>
+      <p>Dean’s/President’s List, scholarships, and competition results.</p>
+      <a href="awards.html">View Awards →</a>
     </div>
 
-    <div class="card">
+    <div class="focus-card">
       <h3>📜 Certifications</h3>
       <p>Exam-based credentials and capital-markets upskilling.</p>
-      <div class="card-actions">
-        <a class="btn-card" href="certifications.html">View Certifications →</a>
-      </div>
+      <a href="certifications.html">View Certifications →</a>
     </div>
   </section>
 
-  <section id="about" style="padding:0 8% 70px;max-width:1200px;margin:0 auto">
-    <h2 style="margin:0 0 10px;color:#0f172a">About Me</h2>
-    <p style="margin:0;color:#374151;line-height:1.8">
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
       I am a finance professional specialising in private equity, institutional investment data management, and investment analytics.
       My experience spans supporting global institutional investors across Asia-Pacific, including retirement funds, asset management firms,
       insurance companies, trust banks, and development banks.
     </p>
+    <p style="margin-top:10px;">
+      At <strong>S&amp;P Global</strong>, I managed investment data for one of the firm's largest institutional portfolios, representing more than
+      <strong>US$550 billion in Assets Under Management (AUM)</strong> across over <strong>1,000 private market funds</strong>.
+    </p>
+    <p style="margin-top:10px;">
+      Beyond finance, I enjoy leveraging technology to solve business problems—this portfolio website was designed and developed from scratch
+      using HTML and CSS.
+    </p>
   </section>
 
-  <footer>© Yi Shien Oon</footer>
+  <footer>
+    © Yi Shien Oon
+  </footer>
 </body>
 </html>
