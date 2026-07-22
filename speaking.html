@@ -41,6 +41,7 @@
       font-size:15px;
       transition: color .2s ease;
     }
+
     nav a:hover{ color:#1e40af; }
 
     .hero{
@@ -64,7 +65,10 @@
       pointer-events:none;
     }
 
-    .hero-inner{ position:relative; max-width:1100px; }
+    .hero-inner{
+      position:relative;
+      max-width:1100px;
+    }
 
     .tag{
       display:inline-block;
@@ -88,7 +92,7 @@
       font-size:18px;
       line-height:1.8;
       color:#cbd5e1;
-      max-width:900px;
+      max-width:860px;
     }
 
     main{
@@ -112,52 +116,68 @@
       font-size:16px;
     }
 
-    .events{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:16px;
-      width:100%;
-    }
-
-    .event-card{
+    .panel{
       background:#fff;
       border:1px solid #e5e7eb;
       border-radius:16px;
       padding:18px;
       box-shadow:0 10px 24px rgba(0,0,0,.04);
-      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
     }
 
-    .event-card:hover{
-      transform: translateY(-4px);
-      border-color:#c7d2fe;
-      box-shadow:0 18px 35px rgba(0,0,0,.08);
-    }
-
-    .event-title{
-      margin:0;
+    .panel h2{
+      margin:0 0 10px;
       color:#0f172a;
-      font-size:16px;
-      font-weight:900;
-      line-height:1.35;
+      font-size:18px;
     }
 
-    .event-meta{
-      margin-top:8px;
-      color:#6b7280;
-      font-size:13px;
-      line-height:1.6;
-    }
-
-    .event-desc{
-      margin-top:12px;
+    .panel p{
+      margin:0 0 14px;
       color:#374151;
       line-height:1.85;
       font-size:15px;
       text-align:justify;
     }
 
-    .event-list{
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+      width:100%;
+      margin-top:16px;
+    }
+
+    .card{
+      background:#ffffff;
+      border:1px solid #e5e7eb;
+      border-radius:16px;
+      padding:18px;
+      box-shadow:0 10px 24px rgba(0,0,0,.04);
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+      text-align:left;
+    }
+
+    .card:hover{
+      transform: translateY(-4px);
+      border-color:#c7d2fe;
+      box-shadow:0 18px 35px rgba(0,0,0,.08);
+    }
+
+    .card h3{
+      margin:0 0 8px;
+      color:#0f172a;
+      font-size:16px;
+      font-weight:900;
+      line-height:1.35;
+    }
+
+    .meta{
+      color:#6b7280;
+      font-size:13px;
+      line-height:1.6;
+      margin-bottom:10px;
+    }
+
+    ul{
       margin:10px 0 0;
       padding-left:18px;
       color:#374151;
@@ -166,17 +186,29 @@
       text-align:justify;
     }
 
-    .event-list li{ margin:6px 0; }
+    li{ margin:6px 0; }
 
-    @media (max-width: 1000px){
-      .events{ grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); }
+    .tight{
+      margin-top:10px;
+    }
+
+    @media (max-width: 900px){
       nav{ flex-direction:column; align-items:flex-start; }
+      nav a{ margin-left:0; margin-right:14px; }
+      .hero h1{ font-size:40px; }
+      .grid-2{ grid-template-columns:1fr; }
+      main{ padding:44px 8%; }
     }
 
     @media (max-width: 600px){
       .hero{ padding:62px 8%; }
       .hero h1{ font-size:38px; }
-      main{ padding:44px 8%; }
+      main{ padding:40px 8%; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .card{ transition:none; }
+      .card:hover{ transform:none; }
     }
 
     footer{
@@ -209,68 +241,87 @@
       <div class="tag">Guest Speaker • Panel • Financial Literacy</div>
       <h1>Guest Speaker &amp; Panel Appearances</h1>
       <p>
-        Sharing financial insights through guest speaking and panel participation—focused on financial literacy, investment strategy,
-        and practical guidance for aspiring investors and traders.
+        Speaking engagements that share practical investment and trading guidance—focused on financial literacy, disciplined decision-making,
+        and confidence for aspiring investors.
       </p>
     </div>
   </section>
 
   <main>
-    <h2 class="section-title">Speaking Highlights</h2>
+    <h2 class="section-title">Featured Panel &amp; Speaking Sessions</h2>
     <p class="lead">
-      Three recent speaking moments where I contributed to discussions, engaged with audiences, and supported learning for the next generation of investors.
+      InvestSmart@SC is highlighted as the featured panel because it is your most formal and multi-stakeholder engagement.
+      The two competition sessions follow as guest-speaking showcases.
     </p>
 
-    <section class="events">
+    <section class="panel">
+      <h2>Featured Panel: InvestSmart@SC (Securities Commission Malaysia)</h2>
 
-      <article class="event-card">
-        <h3 class="event-title">InvestSmart@SC (Securities Commission Malaysia) — Panelist</h3>
-        <div class="event-meta">
-          InvestSmart@SC • 10th Anniversary of BYIC • Hosted by BYIC TARUMT
-        </div>
-        <div class="event-desc">
-          Invited to join a distinguished panel to commemorate the 10th anniversary of the Bursa Young Investor Club (BYIC). The discussion focused on financial literacy and practical investment strategies for young investors.
-        </div>
-        <ul class="event-list">
-          <li>Topics included early-stage investing, budgeting, and the importance of avoiding debt.</li>
-          <li>Panel moderated by <strong>Jay Er</strong> with panellists including <strong>Ting Jing Yuan, CFA, CQF</strong> and <strong>Sung Ming Chiam</strong>.</li>
-          <li>Event brought together industry professionals, students, and aspiring investors in collaboration with Bursa Malaysia, Securities Commission Malaysia, Ted Optimus, and Kenanga Investment Bank.</li>
-        </ul>
-      </article>
+      <p>
+        I was invited as a guest panelist for <strong>InvestSmart@SC</strong>, celebrating the <strong>10th anniversary</strong> of the Bursa Young Investor Club (BYIC).
+        Hosted by BYIC TARUMT and organised in collaboration with <strong>Bursa Malaysia</strong>, <strong>Securities Commission Malaysia</strong>, <strong>Ted Optimus</strong>,
+        and <strong>Kenanga Investment Bank</strong>, the event brought together industry professionals, students, and aspiring investors.
+      </p>
 
-      <article class="event-card">
-        <h3 class="event-title">Malaysia Youth Trading Competition — Guest Speaker</h3>
-        <div class="event-meta">
-          Malaysia Stock Market • Trading education session
-        </div>
-        <div class="event-desc">
-          Invited to share trader-focused insights for aspiring young traders, covering market drivers, practical trading strategies, and discipline under market volatility in the Malaysian equity market.
-        </div>
-        <ul class="event-list">
-          <li>Key drivers affecting listed stocks on Bursa Malaysia: economic indicators, sector trends, and market sentiment.</li>
-          <li>Practical strategies for opportunity identification and risk management in a volatile environment.</li>
-          <li>Trader psychology and the importance of maintaining discipline when navigating dynamic market conditions.</li>
-          <li>Highlighted how fundamentals support technical analysis to strengthen decision-making.</li>
-        </ul>
-      </article>
+      <p>
+        My panel contribution focused on practical financial literacy and investment strategies, including early-stage investing,
+        budgeting, and why avoiding debt matters for long-term financial stability.
+        The discussion was moderated by <strong>Jay Er</strong>, alongside panelists <strong>Ting Jing Yuan (CFA, CQF)</strong> and <strong>Sung Ming Chiam</strong>.
+      </p>
 
-      <article class="event-card">
-        <h3 class="event-title">TARUC Investment Trading Competition — Guest Speaker</h3>
-        <div class="event-meta">
-          Investment decision-making • Novice-friendly guidance
-        </div>
-        <div class="event-desc">
-          Invited to share a structured approach to making informed investment decisions, helping participants connect business fundamentals with market trends and disciplined risk–reward thinking.
-        </div>
-        <ul class="event-list">
-          <li>How to evaluate a company’s business model before investing.</li>
-          <li>Exploring current and future trends in the Malaysian stock market.</li>
-          <li>Sharing personal insights on selected companies using practical examples and case studies.</li>
-          <li>Guidance on balancing risk and reward with patience and discipline for long-term goals.</li>
-        </ul>
-      </article>
+      <ul>
+        <li>Presented and discussed approachable guidance for young investors on building good investing habits early.</li>
+        <li>Supported audience understanding by connecting investment strategy with responsible financial planning.</li>
+        <li>Engaged actively with participants, reflecting strong enthusiasm and engagement during the session.</li>
+      </ul>
 
+      <p class="tight">
+        I’m grateful to the organising team and sponsors for the opportunity to contribute, and I look forward to continuing my efforts in
+        promoting financial literacy.
+      </p>
     </section>
+
+    <div class="grid-2">
+      <section class="card">
+        <h3>Malaysia Youth Trading Competition — Guest Speaker</h3>
+        <div class="meta">
+          Trading education • Bursa Malaysia youth event
+        </div>
+        <p class="tight" style="margin:0 0 14px;color:#374151;line-height:1.85;font-size:15px;text-align:justify;">
+          Invited to share <strong>Trader Insights in the Malaysia Stock Market</strong> with aspiring young traders and finance enthusiasts.
+          I covered market drivers, practical trading strategies, and the importance of discipline when navigating volatility.
+        </p>
+        <ul>
+          <li>Explained key drivers affecting Bursa Malaysia stocks: economic indicators, sector trends, and market sentiment.</li>
+          <li>Shared practical trading strategy principles, with emphasis on risk management in a volatile environment.</li>
+          <li>Discussed trader psychology and discipline to avoid impulsive decisions.</li>
+          <li>Connected fundamentals with technical analysis to strengthen decision-making.</li>
+        </ul>
+        <p class="tight" style="margin-top:10px;color:#374151;line-height:1.85;font-size:15px;text-align:justify;">
+          The audience energy and curiosity reinforced my commitment to helping the next generation invest with informed confidence.
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>TARUC Investment Trading Competition — Guest Speaker</h3>
+        <div class="meta">
+          Investment decision-making • Case-led guidance
+        </div>
+        <p class="tight" style="margin:0 0 14px;color:#374151;line-height:1.85;font-size:15px;text-align:justify;">
+          Invited to share how to make <strong>informed and strategic investment decisions</strong> in a dynamic financial landscape.
+          The session focused on business model evaluation, market trends, and building disciplined risk–reward thinking.
+        </p>
+        <ul>
+          <li>Highlighted the importance of analysing a company’s business model before investing.</li>
+          <li>Reviewed current and future Malaysian market trends and key factors that shape stock performance.</li>
+          <li>Shared personal insights on selected companies using practical examples and case studies.</li>
+          <li>Concluded with guidance on balancing risk and reward through patience and discipline.</li>
+        </ul>
+        <p class="tight" style="margin-top:10px;color:#374151;line-height:1.85;font-size:15px;text-align:justify;">
+          I’m thankful to the organising committee and participants, and I look forward to continuing to support young investors.
+        </p>
+      </section>
+    </div>
   </main>
 
   <footer>© Yi Shien Oon</footer>
