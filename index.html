@@ -13,44 +13,103 @@
     header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;padding:18px 8%;z-index:10}
     nav{display:flex;justify-content:space-between;align-items:center}
     nav a{margin-left:24px;text-decoration:none;color:#374151}
-    .hero{display:grid;grid-template-columns:2fr 1fr;gap:40px;padding:80px 8%;align-items:center}
-    .hero h1{font-size:56px;margin:0}
-    .tag{color:#1e40af;font-weight:700}
+    .hero{
+      display:grid;grid-template-columns:2fr 1fr;gap:34px;
+      padding:78px 8%;align-items:center
+    }
+    .hero .left{position:relative}
+    .hero .left:before{
+      content:"";
+      position:absolute;
+      inset:-40px -30px -30px -40px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(59,130,246,0.18), transparent 40%),
+        radial-gradient(circle at 80% 0%, rgba(30,64,175,0.16), transparent 35%),
+        radial-gradient(circle at 70% 80%, rgba(37,99,235,0.10), transparent 40%);
+      z-index:-1;
+    }
+    .tag{
+      display:inline-block;
+      background:rgba(37,99,235,.10);
+      border:1px solid rgba(37,99,235,.20);
+      color:#1e40af;
+      font-weight:800;
+      letter-spacing:.02em;
+      padding:8px 12px;
+      border-radius:999px;
+      margin-bottom:18px;
+    }
+    .hero h1{font-size:58px;margin:0;line-height:1.02}
+    .hero p{
+      color:#334155;
+      line-height:1.75;
+      margin:16px 0 22px;
+      max-width:720px;
+      font-size:16.5px;
+    }
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
       background:#0f172a;
       color:#fff;
-      padding:14px 24px;
-      border-radius:8px;
+      padding:14px 22px;
+      border-radius:10px;
       text-decoration:none;
-      margin-right:10px;
-      font-weight:600;
-      transition: transform .15s ease, opacity .15s ease;
+      font-weight:700;
+      transition: transform .15s ease, opacity .15s ease, box-shadow .15s ease;
+      box-shadow:0 12px 28px rgba(2,6,23,.12);
+      gap:10px;
     }
-    .btn:hover{transform:translateY(-1px);opacity:.95}
-    .cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-    .card{
-      background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:22px;
-      display:flex;flex-direction:column;height:100%;
-    }
-    .card h3{margin-top:0}
-    .card p{color:#374151;line-height:1.7;margin:10px 0 0}
-    .card .card-actions{margin-top:auto;padding-top:16px}
-    section{padding:70px 8%}
-    footer{text-align:center;padding:40px;color:#6b7280}
-    img{max-width:100%;border-radius:18px}
-
-    /* button variants used in cards */
+    .btn:hover{transform:translateY(-1px);opacity:.98;box-shadow:0 16px 36px rgba(2,6,23,.16)}
     .btn-blue{background:#1e40af}
-
+    .hero .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+    .hero img{max-width:100%;border-radius:22px;border:1px solid rgba(229,231,235,.9);box-shadow:0 18px 50px rgba(2,6,23,.10)}
+    .cardgrid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:18px;
+      padding:0 8% 70px;
+      max-width:1200px;margin:0 auto
+    }
+    .sectionHead{
+      display:flex;align-items:flex-end;justify-content:space-between;gap:16px;
+      padding:24px 8% 0;max-width:1200px;margin:0 auto
+    }
+    .sectionHead h2{margin:0;font-size:28px;color:#0f172a;letter-spacing:-0.01em}
+    .sectionHead p{margin:0;color:#4b5563;line-height:1.6;max-width:560px}
+    .card{
+      background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:22px;
+      display:flex;flex-direction:column;height:100%;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      box-shadow:0 10px 24px rgba(2,6,23,.04);
+    }
+    .card:hover{transform:translateY(-4px);border-color:#c7d2fe;box-shadow:0 18px 45px rgba(2,6,23,.08)}
+    .card h3{margin-top:0;margin-bottom:8px;font-size:18px;color:#0f172a}
+    .card p{color:#374151;line-height:1.7;margin:8px 0 0}
+    .card .card-actions{margin-top:auto;padding-top:16px}
+    .btn-card{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:#ffffff;
+      border:1px solid #dbeafe;
+      color:#0f172a;
+      padding:12px 16px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:700;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      width:100%;
+    }
+    .btn-card:hover{transform:translateY(-1px);background:#eff6ff;border-color:#93c5fd}
+    footer{text-align:center;padding:40px;color:#6b7280}
     @media(max-width:900px){
-      .hero{grid-template-columns:1fr}
-      .hero h1{font-size:40px}
+      .hero{grid-template-columns:1fr;padding:60px 8%}
+      .hero h1{font-size:42px}
     }
   </style>
 </head>
+
 <body>
   <header>
     <nav>
@@ -58,29 +117,34 @@
       <div>
         <a href="index.html">Home</a>
         <a href="career.html">Career</a>
-        <a href="education.html">Education</a>
+        <a href="projects.html">Projects</a>
         <a href="leadership.html">Leadership</a>
+        <a href="education.html">Education</a>
         <a href="awards.html">Awards</a>
-        <a href="speaking.html">Speaking</a>
+        <a href="certifications.html">Certifications</a>
         <a href="contact.html">Contact</a>
-  
       </div>
     </nav>
   </header>
 
   <section class="hero">
-    <div>
+    <div class="left">
       <div class="tag">PRIVATE EQUITY • DATA MANAGEMENT • INVESTMENT</div>
       <h1>Hi, I'm<br>Yi Shien</h1>
       <p>
-        I am a finance professional with experience in private equity data management, institutional investment operations,
-        and investment analysis. At S&P Global, I managed investment data and reporting for APAC Limited Partner portfolios
-        while working with some of the world's largest institutional investors. Beyond finance, I enjoy leveraging technology
-        to solve business problems—this website was designed and coded by myself from scratch as part of my continuous learning journey.
+        I’m a finance professional with experience in private equity data management, institutional investment operations,
+        and investment analysis. At S&amp;P Global, I managed APAC Limited Partner investment data and reporting for leading institutional portfolios.
+        Beyond finance, I build and design my own learning projects to keep improving end-to-end.
       </p>
 
-      <a class="btn" href="career.html">Explore My Career</a>
-      <a class="btn btn-blue" style="margin-right:0" href="#" target="_blank">Download Resume</a>
+      <div class="actions">
+        <a class="btn" href="career.html">
+          Explore My Career →
+        </a>
+        <a class="btn btn-blue" style="box-shadow:none" href="#" target="_blank">
+          Download Resume
+        </a>
+      </div>
     </div>
 
     <div>
@@ -88,93 +152,65 @@
     </div>
   </section>
 
-  <section>
-    <h2>Explore My Portfolio</h2>
+  <div class="sectionHead">
+    <div>
+      <h2>My Focus Areas</h2>
+      <p>Professional journey, learning, and outcomes—built to be easy for recruiters to scan.</p>
+    </div>
+  </div>
 
-    <div class="cardgrid">
-
-      <div class="card">
-        <h3>💼 Career</h3>
-        <p>Discover my professional journey across private equity, institutional investment operations, financial markets, and investment data management.</p>
-        <div class="card-actions">
-          <a class="btn" href="career.html" style="width:100%">View Career →</a>
-        </div>
+  <!-- Explore My Portfolio: removed Projects and Beyond Finance -->
+  <section class="cardgrid">
+    <div class="card">
+      <h3>💼 Career</h3>
+      <p>Private markets, investment data operations, and stakeholder-driven delivery.</p>
+      <div class="card-actions">
+        <a class="btn-card" href="career.html">View Career →</a>
       </div>
+    </div>
 
-      <div class="card">
-        <h3>📊 Projects</h3>
-        <p>Explore my finance, Python, Power BI and investment research projects together with selected case studies.</p>
-        <div class="card-actions">
-          <a class="btn" href="projects.html" style="width:100%">View Projects →</a>
-        </div>
+    <div class="card">
+      <h3>🎓 Education</h3>
+      <p>Finance training, research work, simulation experience, and academic outcomes.</p>
+      <div class="card-actions">
+        <a class="btn-card" href="education.html">View Education →</a>
       </div>
+    </div>
 
-      <div class="card">
-        <h3>🎓 Education</h3>
-        <p>Academic programs, simulation achievements, and research work.</p>
-        <div class="card-actions">
-          <a class="btn" href="education.html" style="width:100%">View Education →</a>
-        </div>
+    <div class="card">
+      <h3>🏆 Leadership</h3>
+      <p>Club leadership, event delivery, and community-building initiatives.</p>
+      <div class="card-actions">
+        <a class="btn-card" href="leadership.html">View Leadership →</a>
       </div>
+    </div>
 
-      <div class="card">
-        <h3>🏆 Leadership</h3>
-        <p>Leadership positions, student organisations, conferences, public speaking, and volunteer experience.</p>
-        <div class="card-actions">
-          <a class="btn" href="leadership.html" style="width:100%">View Leadership →</a>
-        </div>
+    <div class="card">
+      <h3>🏅 Awards</h3>
+      <p>Dean’s/President’s List, scholarships, and competition placements.</p>
+      <div class="card-actions">
+        <a class="btn-card" href="awards.html">View Awards →</a>
       </div>
+    </div>
 
-      <div class="card">
-        <h3>🏅 Awards</h3>
-        <p>Dean’s List recognition, scholarships, and competition results.</p>
-        <div class="card-actions">
-          <a class="btn" href="awards.html" style="width:100%">View Awards →</a>
-        </div>
+    <div class="card">
+      <h3>📜 Certifications</h3>
+      <p>Exam-based credentials and capital-markets upskilling.</p>
+      <div class="card-actions">
+        <a class="btn-card" href="certifications.html">View Certifications →</a>
       </div>
-
-      <div class="card">
-        <h3>📜 Certifications</h3>
-        <p>Professional qualifications including CFA, CFP and technical certifications.</p>
-        <div class="card-actions">
-          <a class="btn" href="certifications.html" style="width:100%">View Certifications →</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>📷 Beyond Finance</h3>
-        <p>Photography, creative work and personal interests that shaped my communication and client management skills.</p>
-        <div class="card-actions">
-          <a class="btn" href="beyond.html" style="width:100%">Learn More →</a>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
+  <section id="about" style="padding:0 8% 70px;max-width:1200px;margin:0 auto">
+    <h2 style="margin:0 0 10px;color:#0f172a">About Me</h2>
+    <p style="margin:0;color:#374151;line-height:1.8">
       I am a finance professional specialising in private equity, institutional investment data management, and investment analytics.
       My experience spans supporting global institutional investors across Asia-Pacific, including retirement funds, asset management firms,
       insurance companies, trust banks, and development banks.
     </p>
-
-    <p>
-      At <strong>S&amp;P Global</strong>, I managed investment data for one of the firm's largest institutional portfolios, representing more than
-      <strong>US$550 billion in Assets Under Management (AUM)</strong> across over <strong>1,000 private market funds</strong>. My responsibilities
-      covered the complete investment data lifecycle, including fund onboarding, cash transaction processing, NAV reconciliation, capital commitment tracking,
-      IRR monitoring, and portfolio company data management.
-    </p>
-
-    <p>
-      Beyond finance, I enjoy leveraging technology to solve business problems. This portfolio website was personally designed and developed from scratch using
-      HTML and CSS as part of my continuous learning journey, reflecting my passion for combining finance with technology.
-    </p>
   </section>
 
-  <footer>
-    © Yi Shien Oon
-  </footer>
+  <footer>© Yi Shien Oon</footer>
 </body>
 </html>
