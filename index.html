@@ -176,6 +176,7 @@
       display:grid;
       grid-template-columns:repeat(5, minmax(0, 1fr));
       gap:18px;
+      align-items:stretch;
     }
 
     .focus-card{
@@ -203,7 +204,6 @@
       line-height:1.6;
       margin:0 0 14px;
       font-size:14.5px;
-      min-height:44px;
     }
 
     .focus-card a{
@@ -242,13 +242,15 @@
 
     footer{text-align:center;padding:40px 8%;color:#6b7280}
 
-    /* Tablet: keep 2-col hero, reduce columns and spacing */
+    body{ overflow-x:hidden; }
+
+    /* Tablet */
     @media(max-width: 1100px){
       nav{gap:14px}
       .hero{padding:60px 8%;gap:22px}
       .snapshot{grid-template-columns:repeat(2, 1fr)}
       .focus-row{
-        grid-template-columns:repeat(4, minmax(0, 1fr));
+        grid-template-columns:repeat(3, minmax(0, 1fr));
         gap:14px;
         padding-bottom:54px;
       }
@@ -257,14 +259,16 @@
       .hero img{max-width:360px}
     }
 
-    /* iPad portrait/tablet: keep header horizontal; keep hero 1? prefer 1 only at small */
+    /* iPad portrait/tablet */
     @media(max-width: 820px){
-      .hero{grid-template-columns:1fr; gap:16px}
+      .hero{grid-template-columns:1fr;gap:16px}
       .hero img{max-width:520px}
       .focus-row{
         grid-template-columns:repeat(2, minmax(0, 1fr));
         gap:12px;
         padding-bottom:48px;
+        padding-left:6%;
+        padding-right:6%;
       }
       .snapshot{grid-template-columns:repeat(2, 1fr)}
       nav{gap:10px}
@@ -277,17 +281,23 @@
       #about{padding-left:6%;padding-right:6%}
     }
 
-    /* Phone: keep it clean */
+    /* Phone */
     @media(max-width: 520px){
       .header-inner{padding:12px 4%}
-      nav{gap:8px}
+      nav{gap:8px; overflow:visible; flex-wrap:nowrap}
       nav a{font-size:13px}
       .hero{padding:46px 6%; gap:12px}
       h1{font-size:42px}
       .hero p{font-size:15.5px; margin:14px 0 18px}
       .snapshot{grid-template-columns:1fr; padding-left:6%; padding-right:6%}
-      .focus-row{grid-template-columns:1fr; padding-left:6%; padding-right:6%}
-      .focus-card{min-height:auto}
+      .focus-row{
+        grid-template-columns:1fr;
+        padding-left:6%;
+        padding-right:6%;
+        gap:12px;
+        padding-bottom:48px;
+      }
+      .focus-card{min-height:auto; padding:16px 14px}
       footer{padding:30px 6%}
       #about{padding:0 6% 60px}
     }
@@ -296,51 +306,19 @@
       .focus-card, .focus-card:hover, .btn, .btn:hover{ transition:none }
     }
 
-    /* --- Force header to stay one line --- */
-@media (max-width: 700px){
-  .header-inner{
-    padding-left:4% !important;
-    padding-right:4% !important;
-  }
-  nav{
-    flex-wrap: nowrap !important;
-    overflow: visible !important;
-    gap: 10px !important;
-  }
-  nav a{
-    font-size: 13.5px !important;
-  }
-}
-
-/* --- Focus areas: clean 2-column layout on tablet/phone --- */
-@media (max-width: 1100px){
-  .focus-row{
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 14px !important;
-  }
-}
-
-@media (max-width: 520px){
-  .focus-row{
-    padding-left: 6% !important;
-    padding-right: 6% !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 12px !important;
-  }
-
-  /* ensure all cards have similar internal spacing so buttons align */
-  .focus-card{
-    padding: 16px 14px !important;
-    min-height: 150px !important;
-  }
-  .focus-card p{
-    min-height: 42px !important;
-    margin-bottom: 12px !important;
-  }
-}
-
-/* --- Prevent any horizontal overflow --- */
-body{ overflow-x:hidden; }
+    /* Force header to stay neat */
+    @media (max-width: 700px){
+      .header-inner{
+        padding-left:4% !important;
+        padding-right:4% !important;
+      }
+      nav{
+        flex-wrap: nowrap !important;
+        overflow: visible !important;
+        gap: 10px !important;
+      }
+      nav a{ font-size: 13.5px !important; }
+    }
   </style>
 </head>
 
@@ -367,10 +345,8 @@ body{ overflow-x:hidden; }
 
       <p>
         I’m a finance professional with experience in private equity data management, institutional investment operations,
-        and investment analysis. At S&amp;P Global, I managed APAC Limited Partner investment data for leading
-        institutional portfolios. I also developed this website from scratch using vibe coding, and my near-term goal is to
-        integrate AI and automation into investment workflows — so teams can spend less time on routine back-office work and
-        focus more on value creation and decision-quality.
+        and investment analysis. At S&amp;P Global, I managed APAC Limited Partner investment data for leading institutional portfolios.
+        I also developed this website from scratch and my near-term goal is to integrate AI and automation into investment workflows.
       </p>
 
       <div class="actions">
