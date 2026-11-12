@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Opus Asset Management | Business Analyst | Yi Shien Oon</title>
+  
+  <link rel="icon" href="../images/website-logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: Inter, sans-serif;
+      background:#f8fafc;
+      color:#111827;
+    }
+
+    header{
+      position: sticky;
+      top: 0;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 16px 8%;
+      z-index: 10;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:#374151;
+      margin-left:18px;
+      font-size:15px;
+      transition: color .2s ease;
+    }
+    nav a:hover{ color:#1e40af; }
+
+    .hero{
+      padding:80px 8%;
+      background:
+        radial-gradient(circle at top right, rgba(59,130,246,0.38), transparent 38%),
+        radial-gradient(circle at bottom left, rgba(30,64,175,0.28), transparent 45%),
+        linear-gradient(135deg,#0f172a,#1e3a8a);
+      color:#fff;
+    }
+
+    .company{
+      display:inline-block;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:700;
+      letter-spacing:.02em;
+      margin-bottom:16px;
+    }
+
+    .hero h1{
+      font-size:48px;
+      margin:0 0 14px;
+    }
+
+    /* NOTE: no justify on scorecard/lifecycle; only hero paragraph stays normal */
+    .hero p{
+      font-size:18px;
+      max-width:860px;
+      line-height:1.8;
+      margin:0 0 22px;
+      color:#cbd5e1;
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin-top:22px;
+    }
+
+    .stat{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:14px;
+      padding:18px;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .stat:hover{
+      transform: translateY(-4px);
+      background: rgba(255,255,255,.12);
+      border-color: rgba(199,210,254,.65);
+    }
+
+    .stat h2{
+      margin:0 0 6px;
+      font-size:26px;
+      color:#ffffff;
+    }
+
+    .stat p{
+      margin:0;
+      color:rgba(255,255,255,.92);
+      font-size:15px;
+      line-height:1.5;
+      text-align:left; /* no justify */
+    }
+
+    section{
+      padding:50px 8%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section h2{
+      margin:0 0 14px;
+      color:#0f172a;
+    }
+
+    /* Justify ONLY normal text areas (overview etc.) */
+    section > p{
+      line-height:1.85;
+      color:#374151;
+      margin:0 0 14px;
+      text-align: justify;
+    }
+
+    /* Keep cards/lifecycle from justifying */
+    .grid{ display:grid; gap:16px; width:100%; }
+    .grid-5{ grid-template-columns:repeat(5,1fr); width:100%; }
+    .grid-3{ grid-template-columns:repeat(3,1fr); width:100%; }
+    .grid-4{ grid-template-columns:repeat(4,1fr); width:100%; }
+
+    .card{
+      background:#ffffff;
+      border:1px solid #e5e7eb;
+      border-radius:14px;
+      padding:18px;
+      box-shadow:0 10px 24px rgba(0,0,0,.04);
+      text-align:left;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .card:hover{
+      transform: translateY(-5px);
+      box-shadow: 0 18px 35px rgba(0,0,0,.08);
+      border-color:#c7d2fe;
+    }
+
+    .card h3{
+      margin:4px 0 10px;
+      color:#0f172a;
+      font-size:18px;
+      text-align:left;
+    }
+    .card p{
+      margin:0;
+      color:#374151;
+      line-height:1.75;
+      text-align:left; /* no justify */
+    }
+
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .badges span{
+      background:#eef2ff;
+      border:1px solid #e0e7ff;
+      color:#1e40af;
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:14px;
+      transition: background .2s ease, transform .2s ease;
+      text-align:center;
+    }
+
+    .badges span:hover{
+      background:#dbeafe;
+      transform: translateY(-2px);
+    }
+
+    footer{
+      text-align:center;
+      padding:30px 8%;
+      color:#6b7280;
+    }
+
+    @media (max-width: 1000px){
+      .grid-5{ grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+      .grid-3{ grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+      .grid-4{ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+      .hero-stats{ grid-template-columns: repeat(2,1fr); }
+      section{ max-width: 1000px; }
+    }
+
+    @media (max-width: 600px){
+      nav{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:12px;
+      }
+      nav a{
+        margin-left:0;
+        margin-right:14px;
+        display:inline-block;
+        margin-bottom:8px;
+      }
+      .hero{ padding:60px 8%; }
+      .hero h1{ font-size:38px; }
+      .hero-stats{ grid-template-columns: 1fr; }
+      section{ padding:40px 8%; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap">
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+
+<body class="inner">
+  <div class="progress" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span class="mono">YS</span>Yi Shien Oon</a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" aria-label="Main navigation">
+        <a href="../career.html" aria-current="page">Career</a>
+        <a href="../education.html">Education</a>
+        <a href="../certifications.html">Certifications</a>
+        <a href="../leadership.html">Leadership</a>
+        <a href="../speaking.html">Speaking</a>
+        <a href="../awards.html">Awards</a>
+        <a class="nav-cta" href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <span class="company">Opus Asset Management · Aug 2026 – Present · Kuala Lumpur</span>
+    <h1>Business Analyst</h1>
+
+    <p>
+      Covering private equity, life settlements, multi-asset and bond funds. I'm building the monitoring, projection and
+      reporting tools for the firm's newly launched private equity asset class, and automating the workflows around them.
+    </p>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <h2>4</h2>
+        <p>Asset classes covered</p>
+      </div>
+      <div class="stat">
+        <h2>New</h2>
+        <p>Private equity asset class launch</p>
+      </div>
+      <div class="stat">
+        <h2>3</h2>
+        <p>Reports automated or built from scratch</p>
+      </div>
+      <div class="stat">
+        <h2>4</h2>
+        <p>Data platforms: Bloomberg, LSEG, CapIQ Pro, iLevel</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Overview</h2>
+    <p>
+      I joined Opus Asset Management as a Business Analyst in August 2026, working mainly across private equity, life settlements, multi-asset and bond funds.
+      Opus is launching private equity as a new asset class, and my focus is building the analytical foundation for it: the metrics,
+      dashboards and cash-flow projections the team uses to monitor the portfolio and plan commitments.
+    </p>
+    <p>
+      Alongside this, I automate recurring reporting and operational work, so the team spends less time on manual hand-offs and more time on analysis.
+      The role builds directly on my LP-side private-markets data experience at S&amp;P Global, now from the asset manager's side.
+    </p>
+  </section>
+
+  <section>
+    <h2>Asset Classes Covered</h2>
+    <div class="grid grid-4">
+      <div class="card"><h3>Private Equity</h3><p>New asset class for the firm, and my main build focus.</p></div>
+      <div class="card"><h3>Life Settlements</h3><p>An alternative asset class with low correlation to traditional markets.</p></div>
+      <div class="card"><h3>Multi-Asset</h3><p>Diversified funds across asset classes.</p></div>
+      <div class="card"><h3>Bond Funds</h3><p>Fixed income portfolios.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What I'm Building</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Investment Monitoring Metrics</h3>
+        <p>Defining the metrics used to monitor the new private equity portfolio.</p>
+      </div>
+      <div class="card">
+        <h3>PE Dashboards</h3>
+        <p>Building dashboards that give the team a clear view of private equity positions and performance.</p>
+      </div>
+      <div class="card">
+        <h3>PE Cash-Flow Projection</h3>
+        <p>Projecting capital calls, distributions and NAV to support liquidity planning and commitment pacing.</p>
+      </div>
+      <div class="card">
+        <h3>Peer Performance Comparison</h3>
+        <p>Automated the peer performance comparison report, replacing a manual process.</p>
+      </div>
+      <div class="card">
+        <h3>Portfolio Attribution Report</h3>
+        <p>Drafted the portfolio attribution report from scratch.</p>
+      </div>
+      <div class="card">
+        <h3>Distribution Report</h3>
+        <p>Drafted the distribution report from scratch.</p>
+      </div>
+      <div class="card">
+        <h3>Operations Workflow Automation</h3>
+        <p>Automated operations-team workflows to reduce manual intervention and save time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Platforms &amp; Knowledge Areas</h2>
+    <div class="badges">
+      <span>Bloomberg</span>
+      <span>LSEG</span>
+      <span>S&amp;P Capital IQ Pro</span>
+      <span>iLevel</span>
+      <span>SQL</span>
+      <span>Power Automate</span>
+      <span>Claude Code</span>
+      <span>Private Equity</span>
+      <span>Life Settlements</span>
+      <span>Multi-Asset</span>
+      <span>Fixed Income</span>
+      <span>Cash-Flow Projection</span>
+      <span>Investment Monitoring</span>
+      <span>Dashboards</span>
+      <span>Performance Attribution</span>
+      <span>Peer Analysis</span>
+      <span>Process Automation</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Key Takeaways</h2>
+    <p>
+      Helping launch a new asset class means building the infrastructure as well as analysing the numbers. Combining LP-side data
+      experience with asset-manager reporting and automation lets me build tools the investment and operations teams can rely on from day one.
+    </p>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; <span id="yr">2026</span> Yi Shien Oon</span>
+      <span>
+        <a href="https://www.linkedin.com/in/oonyishien/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:oonyishien@gmail.com">Email</a>
+        <a href="../contact.html">Contact</a>
+      </span>
+    </div>
+  </footer>
+  <button class="totop" type="button" aria-label="Back to top">&uarr;</button>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

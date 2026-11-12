@@ -7,7 +7,7 @@
   
   <link rel="icon" href="images/website-logo.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-</head>
+
   <style>
     *{ box-sizing:border-box; }
 
@@ -265,22 +265,26 @@
       nav a{ margin-right:14px; margin-left:0; }
     }
   </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap">
+  <link rel="stylesheet" href="assets/theme.css">
 </head>
 
-<body>
-  <header>
-    <nav>
-      <div><strong>Yi Shien Oon</strong></div>
-      <div>
-        <a href="index.html">Home</a>
+<body class="inner">
+  <div class="progress" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><span class="mono">YS</span>Yi Shien Oon</a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" aria-label="Main navigation">
         <a href="career.html">Career</a>
-        <a href="education.html">Education</a>
-        <a href="leadership.html">Leadership</a>
-        <a href="awards.html">Awards</a>
+        <a href="education.html" aria-current="page">Education</a>
         <a href="certifications.html">Certifications</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
+        <a href="leadership.html">Leadership</a>
+        <a href="speaking.html">Speaking</a>
+        <a href="awards.html">Awards</a>
+        <a class="nav-cta" href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <section class="hero">
@@ -454,7 +458,7 @@
             Pursued my Diploma in Finance and Investment at TARUC, earning a Full Scholarship based on awarded 9A's in SPM and graduating with Distinction.
             The diploma program provided a strong foundation in financial principles, investment analysis, and business economics, preparing for more advanced studies and a career in the financial sector.
             <ul>
-              <li>President — <strong>Bursa Young Investor Club</strong>: Grew club membership from <strong>74 to 500</strong> through events, workshops, and trading simulations.</li>
+              <li>President — <strong>Bursa Young Investor Club</strong>: Grew club membership from <strong>67 to 500</strong> through events, workshops, and trading simulations.</li>
               <li>President — <strong>Rookie Investor Accelerator: From Noob to Swag</strong>: Guided students through foundational and advanced investment strategies.</li>
               <li>Treasurer — <strong>Photography Society</strong>: coordinated club activities, including serving as main photographer for Prom Night and producing the university’s promotional video.</li>
               <li>Served as Photographer and Master of Ceremonies (MC) for the Voice of Rahman talent show.</li>
@@ -485,6 +489,17 @@
     </div>
   </main>
 
-  <footer>© Yi Shien Oon</footer>
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; <span id="yr">2026</span> Yi Shien Oon</span>
+      <span>
+        <a href="https://www.linkedin.com/in/oonyishien/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:oonyishien@gmail.com">Email</a>
+        <a href="contact.html">Contact</a>
+      </span>
+    </div>
+  </footer>
+  <button class="totop" type="button" aria-label="Back to top">&uarr;</button>
+  <script src="assets/site.js"></script>
 </body>
 </html>

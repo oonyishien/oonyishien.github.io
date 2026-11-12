@@ -8,7 +8,7 @@
   
   <link rel="icon" href="images/website-logo.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-</head>
+
 
   <style>
     body{
@@ -94,6 +94,14 @@
       margin-top:15px;
     }
 
+    .current{
+      display:inline-block;vertical-align:middle;margin-left:8px;
+      font:700 11.5px Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;
+      color:#1f7a45;background:#e7f5ec;padding:3px 9px;border-radius:999px;
+    }
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .badges span{padding:8px 12px;font-size:14px}
+
     footer{
       padding:40px;
       text-align:center;
@@ -117,29 +125,34 @@
       .section{ padding: 45px 8%; }
     }
   </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap">
+  <link rel="stylesheet" href="assets/theme.css">
 </head>
 
-<body>
-  <header>
-    <nav>
-      <div><strong>Yi Shien Oon</strong></div>
-      <div>
-        <a href="index.html">Home</a>
-        <a href="career.html">Career</a>
+<body class="inner">
+  <div class="progress" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><span class="mono">YS</span>Yi Shien Oon</a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" aria-label="Main navigation">
+        <a href="career.html" aria-current="page">Career</a>
         <a href="education.html">Education</a>
-        <a href="leadership.html">Leadership</a>
-        <a href="awards.html">Awards</a>
         <a href="certifications.html">Certifications</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
+        <a href="leadership.html">Leadership</a>
+        <a href="speaking.html">Speaking</a>
+        <a href="awards.html">Awards</a>
+        <a class="nav-cta" href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <section class="hero">
+    <div class="tag">Career · Private Equity · Investment Analytics</div>
     <h1>Professional Career</h1>
     <p>
-      From financial markets to institutional private equity data, my career has been built around helping global investment
-      organisations make better decisions through high-quality investment data, operational excellence and stakeholder collaboration.
+      From trading desks and investment operations to institutional private-equity data and, now, asset management. My career
+      has been about helping investment organisations make better decisions through high-quality data, clear reporting and automation.
     </p>
   </section>
 
@@ -147,6 +160,25 @@
     <h2>Career Timeline</h2>
 
     <div class="timeline">
+      <div class="timeline-item">
+        <h2>Opus Asset Management <span class="current">Current</span></h2>
+
+        <p>
+          <strong>Business Analyst</strong> · Private Equity, Life Settlements, Multi-Asset &amp; Bond Funds<br>
+          August 2026 – Present · Kuala Lumpur
+        </p>
+
+        <p>
+          Building investment monitoring metrics, dashboards and cash-flow projections for the firm's newly launched private equity asset class.
+          Automated the peer performance comparison report, drafted the portfolio attribution and distribution reports from scratch,
+          and automated operations workflows to reduce manual intervention. Works across Bloomberg and LSEG.
+        </p>
+
+        <a class="button" href="experience/opus.html" style="margin-left:0;">
+          Read Full Experience →
+        </a>
+      </div>
+
       <div class="timeline-item">
         <h2>S&amp;P Global</h2>
 
@@ -156,10 +188,11 @@
         </p>
 
         <p>
-          Managing institutional investment data across APAC covering retirement funds, asset managers, insurance companies, trust banks and development banks.
+          Managed institutional investment data across APAC covering retirement funds, asset managers, insurance companies, trust banks and development banks,
+          including the firm's largest client portfolio (US$550B+ AUM, 1,000+ private market funds).
         </p>
 
-        <a class="button" href="experience/spglobal.html" style="background:#2563eb;margin-left:0;">
+        <a class="button" href="experience/spglobal.html" style="margin-left:0;">
           Read Full Experience →
         </a>
       </div>
@@ -218,9 +251,34 @@
     </div>
   </section>
 
-  <footer>
-    © Yi Shien Oon
+  <section class="section">
+    <h2>Platforms</h2>
+    <div class="badges">
+      <span>Bloomberg</span>
+      <span>LSEG</span>
+      <span>S&amp;P Capital IQ Pro</span>
+      <span>iLevel</span>
+      <span>SQL</span>
+      <span>Power Automate</span>
+      <span>Claude Code</span>
+      <span>Power BI</span>
+      <span>Confluence</span>
+      <span>Microsoft Excel</span>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; <span id="yr">2026</span> Yi Shien Oon</span>
+      <span>
+        <a href="https://www.linkedin.com/in/oonyishien/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:oonyishien@gmail.com">Email</a>
+        <a href="contact.html">Contact</a>
+      </span>
+    </div>
   </footer>
+  <button class="totop" type="button" aria-label="Back to top">&uarr;</button>
+  <script src="assets/site.js"></script>
 </body>
 
 </html>
