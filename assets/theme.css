@@ -103,8 +103,8 @@ body.inner .stat p{color:#b9c3d4;font-size:13.5px}
 /* Content containers aligned with header */
 body.inner main,body.inner section.section{max-width:none;margin:0;padding-left:max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));padding-right:max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)))}
 body.inner main{padding-top:64px;padding-bottom:40px}
-body.inner section:not(.hero):not(.section):not(.card){max-width:var(--max);margin-left:auto;margin-right:auto;padding-left:var(--gutter);padding-right:var(--gutter)}
-body.inner main section:not(.hero):not(.section):not(.card){padding-left:0;padding-right:0}
+body.inner section:not(.hero):not(.section):not(.card):not(.panel){max-width:var(--max);margin-left:auto;margin-right:auto;padding-left:var(--gutter);padding-right:var(--gutter)}
+body.inner main section:not(.hero):not(.section):not(.card):not(.panel){padding-left:0;padding-right:0}
 
 /* Headings in content */
 body.inner .section-title,body.inner section:not(.hero) > h2,body.inner .section > h2,body.inner main > h2{
